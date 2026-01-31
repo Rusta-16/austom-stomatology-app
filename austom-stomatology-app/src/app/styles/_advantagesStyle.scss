@@ -1,0 +1,27 @@
+.AdvantagesPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 3rem 0 3rem;
+
+    section{
+        display: flex;
+        flex-direction: column;
+        gap: 2.2rem;
+        
+
+        .cardAdvantages{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+        }
+    }
+
+    h2{
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-align: center;
+    }
+}
