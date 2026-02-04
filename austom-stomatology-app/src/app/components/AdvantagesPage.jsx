@@ -9,8 +9,13 @@ export default function AdvantagesPage() {
             title: 'Стерильность и безопасность'
         },
         {
-            imgUrl:'/doctorWithPacient.png',
-            title:'Опытные врачи'
+            imgUrl: '/doctorWithPacient.png',
+            title: 'Опытные врачи'
+        },
+        {
+            imgUrl: '/tools.png',
+            title: 'Современное оборудование'
+
         }
     ]
     return (
@@ -20,8 +25,8 @@ export default function AdvantagesPage() {
                 {
                     miniImg.map((img, id) => {
                         return (
-                            <div className='cardAdvantages'>
-                                <Image key={id} src={img.imgUrl} alt={img.title} width={120} height={120}></Image>
+                            <div key={id} className='cardAdvantages'>
+                                <Image src={img.imgUrl} alt={img.title} width={200} height={200}></Image>
                                 <p>{img.title}</p>
                             </div>
                         )

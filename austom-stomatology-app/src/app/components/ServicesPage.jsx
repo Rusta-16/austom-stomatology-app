@@ -55,7 +55,7 @@ export default function ServicesPage() {
                                         <Link href={card.href}>Подробне</Link>
                                     </button>
                                 </div>
-                                <Image src={`/services/${card.imgUrl}`} alt={card.title} width={150} height={140} className='imgCard'></Image>
+                                <Image src={`/services/${card.imgUrl}`} alt={card.title} width={150} height={150} className='imgCard'></Image>
                             </div>
                         )
                     })

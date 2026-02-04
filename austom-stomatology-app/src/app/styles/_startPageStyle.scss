@@ -1,41 +1,74 @@
+@import "_project-variables";
 .startPage {
     display: flex;
     flex-direction: row;
-    padding: 0 1rem;
+    height: 100vh;
+    padding: 0 clamp(1rem, 4vw, 7rem);
     justify-content: space-between;
+    align-items: center;
+
+    @media(max-width:780px) {
+        align-items: none;
+        height: auto;
+        padding-top: 10vw;
+    }
+
+    .imgGirlWithToothbrush {
+        position: relative;
+
+        img {
+            padding-top: 9vw;
+            width: clamp(140px, 25vw, 400px);
+            height: auto;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25)); 
+            will-change: filter;
+        }
+    }
+
+
 
     .startDescription {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-        padding-top: 3rem;
+        gap: clamp(0.313rem, -2.671rem + 10.849vw, 7.5rem);
+        padding-top: clamp(2.5rem, 1.1852rem + 3.963vw, 10rem);
 
-        h2{
+        @media(min-width:780px) {
+            gap: 2.2rem;
+        }
+
+        h2 {
             font-weight: 600;
-            font-size: 1rem;
+            font-size: clamp(1.2rem, 0.1698rem + 3.0189vw, 3rem);
+
         }
-        p{
-            font-size: 0.875rem;
+
+        p {
+            font-size: clamp(0.955rem, 0.408rem + 1.6981vw, 2rem);
         }
+
 
         .buttonForReception {
-            background-color: #FFC6C4;
+            background-color: $pink-color;
             padding: 0.5rem 1rem;
+            margin-top: 6vw;
             border: none;
             border-radius: 35px;
             justify-items: start;
-            max-width: 12rem;
+            width: clamp(12rem, 45vw, 40rem);
 
             a {
-                color: #2a2a2a;
-                font-size: 0.7rem;
+                color: $p-font-color;
+                font-size: clamp(0.7rem, 0.1804rem + 1.8259vw, 1.8rem);
             }
-            &:hover{
+
+            &:hover {
                 background-color: #d8aeab;
 
-                a{
+                a {
                     color: #000000;
                 }
+
                 transition: all 0.4s ease-in-out;
             }
         }

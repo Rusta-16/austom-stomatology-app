@@ -1,26 +1,44 @@
-.AdvantagesPage{
+@import "_project-variables";
+.AdvantagesPage {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3rem 3rem 0 3rem;
+    padding: clamp(3rem, 1.929rem + 4.29vw, 6rem) 3rem 0 3rem;
 
-    section{
+
+    section {
         display: flex;
         flex-direction: column;
-        gap: 2.2rem;
-        
+        gap: clamp(2.2rem, 0.843rem + 5.43vw, 6rem);
 
-        .cardAdvantages{
+        @media(min-width:800px) {
+            display: flex;
+            flex-direction: row;
+            padding-top: clamp(3rem, -0.333rem + 6.67vw, 6rem);
+        }
+
+        .cardAdvantages {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 0.7rem;
+
+            img {
+                width: clamp(150px, 20vw, 300px);
+                height: clamp(150px, 20vw, 300px);
+            }
+
+            p {
+                font-size: $p-font-size;
+                text-align: center;
+            }
+
         }
     }
 
-    h2{
-        font-size: 0.875rem;
+    h2 {
+        font-size: $title-font-size;
         font-weight: 600;
         text-align: center;
     }
