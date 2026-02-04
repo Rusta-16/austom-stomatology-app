@@ -1,9 +1,13 @@
 @import "_project-variables";
+
 .servicesPage {
     display: flex;
     flex-direction: column;
-    padding: clamp(3rem, -0.333rem + 6.67vw, 6rem) 1.5rem 0 1.5rem;
+    padding: clamp(3rem, -0.333rem + 6.67vw, 6rem) clamp(1rem, 4vw, 7rem) 0 clamp(1rem, 4vw, 7rem);
     gap: 3rem;
+
+
+
 
     .titleCardPage {
         text-align: center;
@@ -22,37 +26,88 @@
     }
 
     section {
+        @keyframes appear {
+            from {
+                opacity: 0;
+                scale: 0.5;
+            }
+
+            to {
+                opacity: 1;
+                scale: 1;
+            }
+        }
+
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        align-items: center;
+
 
         .serviceCard {
+            z-index: 0;
+            position: relative;
             width: clamp(18.75rem, 12.5rem + 26.32vw, 37.5rem);
+            height: clamp(10.625rem, 7.5rem + 12.5vw, 19.375rem);
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             gap: 1rem;
             border: solid 3px #A2E2F9;
             border-radius: 20px;
-            box-shadow: -8px 7px 16px -9px rgba(42, 42, 42, 0.19),  inset 0px 0px 41px -14px rgba(162, 226, 249, 0.66);
+            box-shadow: -8px 7px 16px -9px rgba(42, 42, 42, 0.19), inset 0px 0px 41px -14px rgba(162, 226, 249, 0.66);
+            animation: appear linear;
+            animation-timeline: view();
+            animation-range: entry 0;
 
+            &:nth-child(3) {
+                .serviceCardText {
+                    gap: 0.5rem;
 
+                    h4 {
+                        font-size: clamp(0.75rem, 0.482rem + 1.07vw, 1.5rem);
+                    }
+                }
+            }
 
 
             .serviceCardText {
                 display: flex;
                 flex-direction: column;
                 gap: 1rem;
-                padding: 1rem;
-                p{
-                    font-size: clamp(1rem, 0.643rem + 1.43vw, 2rem);
+                justify-content: center;
+                align-items: center;
+                width: 58%;
+
+
+
+                p {
+                    font-size: clamp(0.8rem, 0.514rem + 1.14vw, 1.6rem);
+                    display: inline-block;
+                    width: 72%;
+                    margin: 0 auto;
+                    text-align: left;
+
                 }
-                h4{
-                    font-size: clamp(0.8rem, 0.4rem + 1.68vw, 2rem);
+
+                h4 {
+
+                    font-size: clamp(0.8rem, 0.4rem + 1.6vw, 1.6rem);
+                    display: inline-block;
+                    width: 72%;
+                    margin: 0 auto;
+                    text-align: left;
+
+
                 }
+
+
+
                 .buttonCard {
                     background-color: $pink-color;
                     border: none;
+                    align-self: start;
+                    margin-left: clamp(1.522rem, 0.987rem + 2.14vw, 3.018rem);
                     border-radius: 30px;
                     padding: 0.5rem;
                     width: clamp(4.5rem, 0.973rem + 14.11vw, 14.375rem);
@@ -60,7 +115,7 @@
                     a {
                         color: $p-font-color;
                         font-weight: 500;
-                        font-size: clamp(0.8rem, 0.55rem + 1vw, 1.5rem);
+                        font-size: clamp(0.6rem, 0.243rem + 1.43vw, 1.6rem);
                     }
 
                     &:hover {
@@ -74,11 +129,41 @@
                     }
                 }
             }
-            .imgCard{
-                width: clamp(9.375rem, 7.083rem + 9.65vw, 16.25rem);
-                height: clamp(9.375rem, 7.083rem + 9.65vw, 16.25rem);
-                border-radius: 50% 7% 50% 50%;
+
+            .imgCard {
+                position: absolute;
+                right: -0.7%;
+                top: -1.5%;
+                z-index: 1;
+                width: clamp(7.938rem, 4.094rem + 15.38vw, 15.625rem);
+                height: clamp(7.938rem, 4.094rem + 15.38vw, 15.625rem);
+                border-radius: 50% 10.5% 45% 50%;
             }
+        }
+    }
+
+    .buttonForPrice {
+        background-color: $pink-color;
+        padding: 0.5rem 1rem;
+        margin-top: 6vw;
+        border: none;
+        border-radius: 35px;
+        justify-items: start;
+        width: clamp(12rem, 45vw, 40rem);
+
+        a {
+            color: $p-font-color;
+            font-size: clamp(0.7rem, 0.1804rem + 1.8259vw, 1.8rem);
+        }
+
+        &:hover {
+            background-color: #d8aeab;
+
+            a {
+                color: #000000;
+            }
+
+            transition: all 0.4s ease-in-out;
         }
     }
 

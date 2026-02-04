@@ -60,6 +60,7 @@ export default function ServicesPage() {
                         )
                     })
                 }
+                <button className='buttonForPrice'>Посмотреть весь прайс</button>
             </section>
         </div>
     )
