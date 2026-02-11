@@ -8,7 +8,7 @@
   justify-content: space-between;
   padding: clamp(0.4rem, 2vw, 1rem);
   z-index: 100;
-  background-color: rgba(250, 250, 255, 0.85);
+  background-color: rgba(250, 250, 255, 0.93);
 }
 @media (min-width: 704px) {
   .header {
@@ -73,6 +73,10 @@
   opacity: 1;
   visibility: visible;
   transform: scale(1) translateY(0);
+}
+.header nav.showNavMobile a {
+  border-bottom: solid 1px rgba(255, 198, 196, 0.62);
+  padding-bottom: 1px;
 }
 .header #humburgerBut {
   display: flex;
@@ -139,16 +143,26 @@
     padding-top: 10vw;
   }
 }
+.startPage .imgGirlWithToothbrush {
+  position: relative;
+}
 .startPage .imgGirlWithToothbrush img {
   padding-top: 9vw;
   width: clamp(140px, 25vw, 400px);
   height: auto;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
+  will-change: filter;
 }
 .startPage .startDescription {
   display: flex;
   flex-direction: column;
   gap: clamp(0.313rem, -2.671rem + 10.849vw, 7.5rem);
   padding-top: clamp(2.5rem, 1.1852rem + 3.963vw, 10rem);
+}
+@media (min-width: 780px) {
+  .startPage .startDescription {
+    gap: 2.2rem;
+  }
 }
 .startPage .startDescription h2 {
   font-weight: 600;
@@ -160,6 +174,7 @@
 .startPage .startDescription .buttonForReception {
   background-color: #FFC6C4;
   padding: 0.5rem 1rem;
+  margin-top: 6vw;
   border: none;
   border-radius: 35px;
   justify-items: start;
@@ -181,12 +196,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem 3rem 0 3rem;
+  padding: clamp(3rem, 1.929rem + 4.29vw, 6rem) 3rem 0 3rem;
 }
 .AdvantagesPage section {
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
+  gap: clamp(2.2rem, 0.843rem + 5.43vw, 6rem);
+}
+@media (min-width: 800px) {
+  .AdvantagesPage section {
+    display: flex;
+    flex-direction: row;
+    padding-top: clamp(3rem, -0.333rem + 6.67vw, 6rem);
+  }
 }
 .AdvantagesPage section .cardAdvantages {
   display: flex;
@@ -194,6 +216,38 @@
   align-items: center;
   justify-content: center;
   gap: 0.7rem;
+  animation-name: upScaleCards, fadeOut;
+  animation-duration: 1s, 1s;
+  animation-timeline: view(), view();
+  animation-range: entry 0, exit 10;
+}
+@keyframes upScaleCards {
+  from {
+    opacity: 0;
+    transform: translateY(-100px) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100px) scale(0.5);
+  }
+}
+.AdvantagesPage section .cardAdvantages img {
+  width: clamp(150px, 20vw, 300px);
+  height: clamp(150px, 20vw, 300px);
+}
+.AdvantagesPage section .cardAdvantages p {
+  font-size: clamp(0.85rem, 0.439rem + 1.64vw, 2rem);
+  text-align: center;
 }
 .AdvantagesPage h2 {
   font-size: clamp(1rem, 0.4704rem + 1.9259vw, 2.3rem);
@@ -204,50 +258,95 @@
 .servicesPage {
   display: flex;
   flex-direction: column;
-  padding: 4rem 1.5rem 0 1.5rem;
+  padding: clamp(3rem, -0.333rem + 6.67vw, 6rem) clamp(1rem, 4vw, 7rem) 0 clamp(1rem, 4vw, 7rem);
   gap: 3rem;
 }
 .servicesPage .titleCardPage {
   text-align: center;
 }
 .servicesPage .titleCardPage h2 {
-  font-size: 1rem;
+  font-size: clamp(1rem, 0.4704rem + 1.9259vw, 2.3rem);
   justify-self: center;
   margin-bottom: 0.5rem;
 }
 .servicesPage .titleCardPage p {
   border-top: solid 3px #FFC6C4;
   padding-top: 0.2rem;
+  font-size: clamp(0.85rem, 0.439rem + 1.64vw, 2rem);
 }
 .servicesPage section {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  align-items: center;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
 }
 .servicesPage section .serviceCard {
+  z-index: 0;
+  position: relative;
+  width: clamp(18.75rem, 12.5rem + 26.32vw, 37.5rem);
+  height: clamp(10.625rem, 7.5rem + 12.5vw, 19.375rem);
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap: 1rem;
   border: solid 3px #A2E2F9;
   border-radius: 20px;
+  box-shadow: -8px 7px 16px -9px rgba(42, 42, 42, 0.19), inset 0px 0px 41px -14px rgba(162, 226, 249, 0.66);
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0;
+}
+.servicesPage section .serviceCard:nth-child(3) .serviceCardText {
+  gap: 0.5rem;
+}
+.servicesPage section .serviceCard:nth-child(3) .serviceCardText h4 {
+  font-size: clamp(0.75rem, 0.482rem + 1.07vw, 1.5rem);
 }
 .servicesPage section .serviceCard .serviceCardText {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 58%;
+}
+.servicesPage section .serviceCard .serviceCardText p {
+  font-size: clamp(0.8rem, 0.514rem + 1.14vw, 1.6rem);
+  display: inline-block;
+  width: 72%;
+  margin: 0 auto;
+  text-align: left;
+}
+.servicesPage section .serviceCard .serviceCardText h4 {
+  font-size: clamp(0.8rem, 0.4rem + 1.6vw, 1.6rem);
+  display: inline-block;
+  width: 72%;
+  margin: 0 auto;
+  text-align: left;
 }
 .servicesPage section .serviceCard .serviceCardText .buttonCard {
   background-color: #FFC6C4;
   border: none;
+  align-self: start;
+  margin-left: clamp(1.522rem, 0.987rem + 2.14vw, 3.018rem);
   border-radius: 30px;
   padding: 0.5rem;
-  max-width: 40%;
+  width: clamp(4.5rem, 0.973rem + 14.11vw, 14.375rem);
 }
 .servicesPage section .serviceCard .serviceCardText .buttonCard a {
   color: #2a2a2a;
   font-weight: 500;
-  font-size: 0.8rem;
+  font-size: clamp(0.6rem, 0.243rem + 1.43vw, 1.6rem);
 }
 .servicesPage section .serviceCard .serviceCardText .buttonCard:hover {
   background-color: #d8aeab;
@@ -257,7 +356,67 @@
   color: #000000;
 }
 .servicesPage section .serviceCard .imgCard {
-  border-radius: 50% 9% 50% 50%;
+  position: absolute;
+  right: -0.7%;
+  top: -1.5%;
+  z-index: 1;
+  width: clamp(7.938rem, 4.094rem + 15.38vw, 15.625rem);
+  height: clamp(7.938rem, 4.094rem + 15.38vw, 15.625rem);
+  border-radius: 50% 10.5% 45% 50%;
+}
+.servicesPage .buttonForPrice {
+  background-color: #FFC6C4;
+  padding: 0.5rem 1rem;
+  margin-top: 6vw;
+  border: none;
+  border-radius: 35px;
+  justify-items: start;
+  width: clamp(12rem, 45vw, 40rem);
+}
+.servicesPage .buttonForPrice a {
+  color: #2a2a2a;
+  font-size: clamp(0.7rem, 0.1804rem + 1.8259vw, 1.8rem);
+}
+.servicesPage .buttonForPrice:hover {
+  background-color: #d8aeab;
+  transition: all 0.4s ease-in-out;
+}
+.servicesPage .buttonForPrice:hover a {
+  color: #000000;
+}
+
+.ExampleWorksPage {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(3rem, -0.333rem + 6.67vw, 6rem) clamp(1rem, 4vw, 7rem) 0 clamp(1rem, 4vw, 7rem);
+}
+.ExampleWorksPage .blockExamleWorks {
+  text-align: center;
+}
+.ExampleWorksPage .blockExamleWorks h2 {
+  font-size: clamp(1rem, 0.4704rem + 1.9259vw, 2.3rem);
+  justify-self: center;
+  margin-bottom: 0.5rem;
+}
+.ExampleWorksPage .blockExamleWorks p {
+  border-top: solid 3px #FFC6C4;
+  padding-top: 0.2rem;
+  font-size: clamp(0.85rem, 0.439rem + 1.64vw, 2rem);
+}
+.ExampleWorksPage .blockExamleWorks .blockImgWorksWithBut {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+.ExampleWorksPage .blockExamleWorks .blockImgWorksWithBut .blockImgWorks {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-flow: column;
+  gap: 20px;
+}
+.ExampleWorksPage .blockExamleWorks .blockImgWorksWithBut .blockImgWorks .imgWorks {
+  grid-template-rows: 1fr 1fr;
 }
 
 *,
@@ -301,8 +460,4 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
-}
-
-img {
-  mix-blend-mode: multiply;
 }/*# sourceMappingURL=globals.css.map */

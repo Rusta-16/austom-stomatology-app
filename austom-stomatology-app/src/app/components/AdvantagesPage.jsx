@@ -1,5 +1,7 @@
+'use client'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { compile } from 'sass'
 
 export default function AdvantagesPage() {
 
@@ -18,9 +20,37 @@ export default function AdvantagesPage() {
 
         }
     ]
+
+    const AustomH2 = 'Стоматология «Аюстом» — все услуги в одном кабинете'
+    const [AustomH2Display, setAustomH2Display] = useState('')
+
+    useEffect(() => {
+        let index = 0;
+        let count = 1
+        console.log("Длина строки: ", AustomH2.length)
+        function displayText() {
+            console.log(`Функция запущенна в ${count} раз`)
+            if (index < AustomH2.length - 1) {
+                console.log('Индекс: ', index)
+                setAustomH2Display(
+                    prev => prev + AustomH2[index],
+                    console.log('В AustomH2Display добавлена буква: ',AustomH2[index])
+                );
+                index++;
+                console.log('Индекс увеличился')
+                setTimeout(displayText, 100);
+
+            }
+            count++;
+        }
+
+        displayText();
+
+
+    }, []);
     return (
         <div className='AdvantagesPage'>
-            <h2>Стоматология «Аюстом» — все услуги в одном кабинете</h2>
+            <h2>{AustomH2Display}</h2>
             <section>
                 {
                     miniImg.map((img, id) => {

@@ -1,4 +1,5 @@
 @import "_project-variables";
+
 .AdvantagesPage {
     display: flex;
     flex-direction: column;
@@ -18,11 +19,47 @@
         }
 
         .cardAdvantages {
+
+            @keyframes upScaleCards {
+                from {
+                    opacity: 0;
+                    transform: translateY(-100px) scale(0);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+
+            }
+
+            @keyframes fadeOut {
+                from {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+
+                }
+
+                to {
+                    opacity: 0;
+                    transform: translateY(-100px) scale(0.5); 
+                }
+            }
+
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 0.7rem;
+            animation-name: upScaleCards,
+            fadeOut;
+            animation-duration: 1s,
+            1s;
+            animation-timeline: view(),
+            view();
+            animation-range: entry 0,
+            exit 10;
+
 
             img {
                 width: clamp(150px, 20vw, 300px);
