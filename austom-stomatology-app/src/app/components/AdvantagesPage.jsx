@@ -38,7 +38,7 @@ export default function AdvantagesPage() {
                 );
                 index++;
                 console.log('Индекс увеличился')
-                setTimeout(displayText, 100);
+                setTimeout(displayText, 60);
 
             }
             count++;

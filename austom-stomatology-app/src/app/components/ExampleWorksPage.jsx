@@ -1,6 +1,7 @@
+
 import Image from 'next/image'
 import React from 'react'
-
+import{FaChevronLeft , FaChevronRight} from 'react-icons/fa'
 export default function ExampleOurWorks() {
 
     const arrPhotoWorks = [
@@ -20,7 +21,7 @@ export default function ExampleOurWorks() {
                 <h2>Примеры наших работ</h2>
                 <p>Лучший способ показать наши возможности — это результаты. В галерее вы увидите, с какими случаями мы справляемся.</p>
                 <div className='blockImgWorksWithBut'>
-                    <button>=</button>
+                    <FaChevronLeft className='arrow'/>
                     <div className='blockImgWorks'>
                         {
                             arrPhotoWorks.map((imgUrl, id) => {
@@ -34,8 +35,7 @@ export default function ExampleOurWorks() {
                             })
                         }
                     </div>
-
-                    <button>=</button>
+                    <FaChevronRight  className='arrow'/>
                 </div>
             </div>
             <div></div>

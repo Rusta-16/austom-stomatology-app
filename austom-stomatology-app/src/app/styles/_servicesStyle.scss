@@ -26,17 +26,17 @@
     }
 
     section {
-            @keyframes appear {
-                from {
-                    opacity: 0;
-                    scale: 0.5;
-                }
-
-                to {
-                    opacity: 1;
-                    scale: 1;
-                }
+        @keyframes appear {
+            from {
+                opacity: 0;
+                scale: 0.5;
             }
+
+            to {
+                opacity: 1;
+                scale: 1;
+            }
+        }
 
         display: flex;
         flex-direction: column;
@@ -105,8 +105,11 @@
 
                 .buttonCard {
                     background-color: project-variables.$pink-color;
+                    display: flex;
                     border: none;
                     align-self: start;
+                    align-items: center;
+                    justify-content: center;
                     margin-left: clamp(1.522rem, 0.987rem + 2.14vw, 3.018rem);
                     border-radius: 30px;
                     padding: 0.5rem;
@@ -116,6 +119,8 @@
                         color: project-variables.$p-font-color;
                         font-weight: 500;
                         font-size: clamp(0.6rem, 0.243rem + 1.43vw, 1.6rem);
+                        align-items: center;
+                        justify-content: center;
                     }
 
                     &:hover {

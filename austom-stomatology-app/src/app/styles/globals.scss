@@ -29,14 +29,14 @@ ol {
     list-style: none;
 }
 html {
-  height: 100%; // ← Обязательно!
+  height: 100%; 
 }
 body {
     margin: 0;
     padding: 0;
-    min-height: 100vh; // ← viewport height!
+    min-height: 100vh; 
     display: flex;
-    flex-direction: column; // ← ВАЖНО!
+    flex-direction: column; 
     font-family: "Montserrat", sans-serif;
     background-color: #F0F0FA;
     color: project-variables.$p-font-color;

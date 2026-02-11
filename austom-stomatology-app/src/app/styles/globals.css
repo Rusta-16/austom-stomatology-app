@@ -336,8 +336,11 @@
 }
 .servicesPage section .serviceCard .serviceCardText .buttonCard {
   background-color: #FFC6C4;
+  display: flex;
   border: none;
   align-self: start;
+  align-items: center;
+  justify-content: center;
   margin-left: clamp(1.522rem, 0.987rem + 2.14vw, 3.018rem);
   border-radius: 30px;
   padding: 0.5rem;
@@ -347,6 +350,8 @@
   color: #2a2a2a;
   font-weight: 500;
   font-size: clamp(0.6rem, 0.243rem + 1.43vw, 1.6rem);
+  align-items: center;
+  justify-content: center;
 }
 .servicesPage section .serviceCard .serviceCardText .buttonCard:hover {
   background-color: #d8aeab;
