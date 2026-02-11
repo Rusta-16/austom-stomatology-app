@@ -1,9 +1,11 @@
 //Импорты файлов scss
-@import '_headerStyle';
-@import '_startPageStyle';
-@import '_advantagesStyle';
-@import '_servicesStyle';
-@import '_exampleWorksStyle';
+@use '_headerStyle';
+@use '_startPageStyle';
+@use '_advantagesStyle';
+@use '_servicesStyle';
+@use '_exampleWorksStyle';
+@use "project-variables";
+
 
 
 
@@ -37,7 +39,7 @@ body {
     flex-direction: column; // ← ВАЖНО!
     font-family: "Montserrat", sans-serif;
     background-color: #F0F0FA;
-    color: $p-font-color;
+    color: project-variables.$p-font-color;
 }
 
 header {

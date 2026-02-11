@@ -1,4 +1,4 @@
-@import "_project-variables";
+@use "_project-variables";
 
 .AdvantagesPage {
     display: flex;
@@ -67,7 +67,7 @@
             }
 
             p {
-                font-size: $p-font-size;
+                font-size: project-variables.$p-font-size;
                 text-align: center;
             }
 
@@ -75,7 +75,7 @@
     }
 
     h2 {
-        font-size: $title-font-size;
+        font-size: project-variables.$title-font-size;
         font-weight: 600;
         text-align: center;
     }

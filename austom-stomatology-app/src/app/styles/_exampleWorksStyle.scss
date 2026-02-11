@@ -1,3 +1,5 @@
+@use "project-variables";
+
 .ExampleWorksPage {
     display: flex;
     flex-direction: column;
@@ -7,15 +9,15 @@
         text-align: center;
 
         h2 {
-            font-size: $title-font-size;
+            font-size: project-variables.$title-font-size;
             justify-self: center;
             margin-bottom: 0.5rem;
         }
 
         p {
-            border-top: solid 3px $pink-color;
+            border-top: solid 3px project-variables.$pink-color;
             padding-top: 0.2rem;
-            font-size: $p-font-size;
+            font-size: project-variables.$p-font-size;
         }
 
         .blockImgWorksWithBut {

@@ -1,4 +1,4 @@
-@import "_project-variables";
+@use "_project-variables";
 
 .servicesPage {
     display: flex;
@@ -13,15 +13,15 @@
         text-align: center;
 
         h2 {
-            font-size: $title-font-size;
+            font-size: project-variables.$title-font-size;
             justify-self: center;
             margin-bottom: 0.5rem;
         }
 
         p {
-            border-top: solid 3px $pink-color;
+            border-top: solid 3px project-variables.$pink-color;
             padding-top: 0.2rem;
-            font-size: $p-font-size;
+            font-size: project-variables.$p-font-size;
         }
     }
 
@@ -104,7 +104,7 @@
 
 
                 .buttonCard {
-                    background-color: $pink-color;
+                    background-color: project-variables.$pink-color;
                     border: none;
                     align-self: start;
                     margin-left: clamp(1.522rem, 0.987rem + 2.14vw, 3.018rem);
@@ -113,7 +113,7 @@
                     width: clamp(4.5rem, 0.973rem + 14.11vw, 14.375rem);
 
                     a {
-                        color: $p-font-color;
+                        color: project-variables.$p-font-color;
                         font-weight: 500;
                         font-size: clamp(0.6rem, 0.243rem + 1.43vw, 1.6rem);
                     }
@@ -143,7 +143,7 @@
     }
 
     .buttonForPrice {
-        background-color: $pink-color;
+        background-color: project-variables.$pink-color;
         padding: 0.5rem 1rem;
         margin-top: 6vw;
         border: none;
@@ -152,7 +152,7 @@
         width: clamp(12rem, 45vw, 40rem);
 
         a {
-            color: $p-font-color;
+            color: project-variables.$p-font-color;
             font-size: clamp(0.7rem, 0.1804rem + 1.8259vw, 1.8rem);
         }
 
