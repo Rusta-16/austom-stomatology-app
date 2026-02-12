@@ -21,7 +21,7 @@ export default function AdvantagesPage() {
         }
     ]
 
-    const AustomH2 = 'Стоматология «Аюстом» — все услуги в одном кабинете'
+    const AustomH2 = 'Стоматология «Аюстом» забота о ваших зубах - наша работа'
     const [AustomH2Display, setAustomH2Display] = useState('')
 
     useEffect(() => {
@@ -34,7 +34,7 @@ export default function AdvantagesPage() {
                 console.log('Индекс: ', index)
                 setAustomH2Display(
                     prev => prev + AustomH2[index],
-                    console.log('В AustomH2Display добавлена буква: ',AustomH2[index])
+                    console.log('В AustomH2Display добавлена буква: ', AustomH2[index])
                 );
                 index++;
                 console.log('Индекс увеличился')
