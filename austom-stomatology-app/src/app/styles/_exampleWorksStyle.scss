@@ -21,8 +21,14 @@
         }
 
         .blockImgWorksWithBut {
+            .cubik {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+            }
+
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
             gap: 1rem;
 
@@ -46,6 +52,8 @@
                     transition: all 0.4s ease-in-out;
                 }
             }
+
+
 
             .blockImgWorks {
                 display: grid;
