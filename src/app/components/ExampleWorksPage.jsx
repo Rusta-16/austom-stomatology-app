@@ -84,6 +84,7 @@ export default function ExampleOurWorks() {
         ...arrPhotoWorks,
         ...arrPhotoWorks
     ]
+    
     useEffect(() => {
         const slider = wraper.current
         if (!slider) return
