@@ -1,0 +1,93 @@
+@use "_project-variables";
+
+.SpecialPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(2rem, -0.333rem + 6.67vw, 4rem) clamp(1rem, 4vw, 7rem) 0 clamp(1rem, 4vw, 7rem);
+    // overflow: hidden;
+
+
+    h2 {
+        font-size: project-variables.$title-font-size;
+        margin-bottom: 1.5rem;
+    }
+
+    .specialOfferCol {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .offer {
+            display: flex;
+            flex-direction: row;
+            
+            border: 3px solid #A2E2F9;
+            border-radius: 20px;
+            gap: 0.5rem;
+
+            .offerText {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                gap: clamp(0.4rem, 0.065rem + 1.53vw, 1.5rem);
+                padding: clamp(0.2rem, -0.348rem + 2.5vw, 1rem);
+                justify-content: center;
+                h4 {
+                    font-size: clamp(0.8rem, 0.374rem + 1.95vw, 2.2rem);
+                    justify-self: center;
+                }
+
+                p {
+                    font-size: clamp(0.8rem, 0.435rem + 1.67vw, 2rem);
+                    width: fit-content;
+                }
+                #procent{
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    z-index: -1;
+                }
+            }
+
+
+            img {
+                width: clamp(7rem, 1.522rem + 25.04vw, 25rem);
+                height: clamp(7rem, 1.522rem + 25.04vw, 25rem);
+                padding-left: clamp(0.2rem, -0.348rem + 2.5vw, 2rem);;
+            }
+        }
+    }
+}
+
+span {
+    color: project-variables.$pink-color;
+}
+
+.buttonCard {
+    background-color: project-variables.$pink-color;
+    display: flex;
+    border: none;
+    justify-content: center;
+    border-radius: 30px;
+    padding: 0.5rem;
+    width: clamp(8rem, 3.13rem + 22.26vw, 24rem);
+
+    a {
+        color: project-variables.$p-font-color;
+        font-weight: 500;
+        font-size: clamp(0.6rem, 0.174rem + 1.95vw, 2rem);
+        align-items: center;
+        justify-content: center;
+    }
+
+    &:hover {
+        background-color: #d8aeab;
+
+        a {
+            color: #000000;
+        }
+
+        transition: all 0.4s ease-in-out;
+    }
+}

@@ -1,0 +1,82 @@
+@use "_project-variables";
+
+.AdvantagesPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(3rem, 1.929rem + 4.29vw, 6rem) 3rem 0 3rem;
+
+
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2.2rem, 0.843rem + 5.43vw, 6rem);
+
+        @media(min-width:800px) {
+            display: flex;
+            flex-direction: row;
+            padding-top: clamp(3rem, -0.333rem + 6.67vw, 6rem);
+        }
+
+        .cardAdvantages {
+
+            @keyframes upScaleCards {
+                from {
+                    opacity: 0;
+                    transform: translateY(-100px) scale(0);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+
+            }
+
+            @keyframes fadeOut {
+                from {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+
+                }
+
+                to {
+                    opacity: 0;
+                    transform: translateY(-100px) scale(0.5); 
+                }
+            }
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            animation-name: upScaleCards,
+            fadeOut;
+            animation-duration: 1s,
+            1s;
+            animation-timeline: view(),
+            view();
+            animation-range: entry 0,
+            exit 10;
+
+
+            img {
+                width: clamp(150px, 20vw, 300px);
+                height: clamp(150px, 20vw, 300px);
+            }
+
+            p {
+                font-size: project-variables.$p-font-size;
+                text-align: center;
+            }
+
+        }
+    }
+
+    h2 {
+        font-size: project-variables.$title-font-size;
+        font-weight: 600;
+        text-align: center;
+    }
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<svg width="440" height="441" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <mask height="541" id="mask0_31_6" maskUnits="userSpaceOnUse" width="440" x="0" y="0">
+  <path d="m440,541l-440,0l0,-511.04l440,0l0,511.04z" fill="white" id="svg_1"/>
+ </mask>
+ <g class="layer">
+  <title>Layer 1</title>
+  <g id="svg_2" mask="url(#mask0_31_6)">
+   <ellipse cx="274.27" cy="244.19" fill="#DEEBF7" id="svg_3" rx="218.62" ry="167.6" transform="matrix(0.965857 0.562212 -0.606273 0.895663 118.908 -144.877)"/>
+   <ellipse cx="289.87" cy="275.89" fill="#AEE1F3" fill-opacity="0.35" id="svg_4" rx="198.56" ry="149.16" transform="matrix(0.965857 0.562212 -0.606273 0.895663 140.855 -148.517)"/>
+  </g>
+ </g>
+</svg>

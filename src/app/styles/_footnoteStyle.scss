@@ -1,0 +1,55 @@
+@use "project-variables";
+
+.FootnotePage {
+    display: flex;
+    flex-direction: row;
+    border-top: solid 3px #A2E2F9;
+    border-bottom: solid 3px #A2E2F9;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 1rem 0.2rem 1rem 0.2rem;
+    gap: clamp(0.5rem, -0.87rem + 6.26vw, 5rem);
+
+    #gen-doct-image {
+        width: clamp(7rem, 4.87rem + 9.74vw, 14rem);
+        height: clamp(7rem, 4.87rem + 9.74vw, 14rem);
+    }
+
+    .textWithIcon {
+        display: flex;
+        flex-direction: column;
+
+        .text {
+            p {
+                font-size: clamp(0.75rem, 0.477rem + 1.36vw, 1.5rem);
+                
+                b{
+                    font-weight: 600;
+                }
+            }
+
+            #footnote-text {
+                font-size: clamp(0.875rem, 0.472rem + 1.84vw, 2.2rem);
+                font-weight: 600;
+                margin-bottom: 0.4rem;
+
+            }
+
+            #pi {
+                margin: 0.5rem 0 0.2rem 0;
+                font-size: clamp(0.75rem, 0.477rem + 1.36vw, 1.5rem);
+            }
+        }
+
+        .contucts {
+            gap: 0.5rem;
+            padding-top: 0.5rem;
+
+            img {
+                width: clamp(1.5rem, 1.196rem + 1.39vw, 2.5rem);
+                height: clamp(1.5rem, 1.196rem + 1.39vw, 2.5rem);
+            }
+        }
+    }
+}

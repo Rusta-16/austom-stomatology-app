@@ -1,0 +1,66 @@
+@use "_project-variables";
+
+.ClinicIntoPage {
+    display: flex;
+    flex-direction: column;
+    padding: 0 clamp(1rem, 4vw, 7rem);
+
+    .blockImgRoomsWithBut {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
+
+
+        .arrow {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            color: #000000;
+            border-radius: 100%;
+            font-size: 2rem;
+            padding: 12px;
+            height: clamp(2rem, 1.636rem + 1.82vw, 3rem);
+            width: clamp(2rem, 1.636rem + 1.82vw, 3rem);
+            background-color: project-variables.$pink-color;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #d8aeab;
+
+                a {
+                    color: #000000;
+                }
+
+                transition: all 0.8s ease-in-out;
+            }
+        }
+
+        .wrapper-images {
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+
+            .blockImgRoom {
+                display: flex;
+                flex-direction: row;
+                width: 80rem;
+                transition: transform 0.4s ease-in-out;
+                gap: 1rem;
+
+                .imgRoom {
+                    min-width: 32.1%;
+                    flex-shrink: 0;
+                    display: flex;
+                    flex-direction: column;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
