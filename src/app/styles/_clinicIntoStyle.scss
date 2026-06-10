@@ -6,6 +6,9 @@
     padding: 0 clamp(1rem, 4vw, 7rem);
 
     .blockImgRoomsWithBut {
+        width: 100%; 
+        max-width: 1500px;
+        margin: 0 auto;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -39,25 +42,22 @@
 
         .wrapper-images {
             display: flex;
-            flex-direction: row;
             overflow: hidden;
+            
 
             .blockImgRoom {
                 display: flex;
-                flex-direction: row;
-                width: 80rem;
                 transition: transform 0.4s ease-in-out;
                 gap: 1rem;
+                width: max-content;
+                width: clamp(10rem, 80vw, 150rem);
 
                 .imgRoom {
-                    min-width: 32.1%;
-                    flex-shrink: 0;
-                    display: flex;
-                    flex-direction: column;
+                    flex: 0 0 calc((100% - 2rem) / 3);
 
                     img {
                         width: 100%;
-                        height: auto;
+                        height: 100%;
                     }
                 }
             }

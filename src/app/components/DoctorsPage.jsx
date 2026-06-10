@@ -9,7 +9,7 @@ export default function DoctorsPage() {
   const [currentSlide, setCurrentSlide] = useState(6)
   const wraper = useRef(null)
   useEffect(() => {
-    const slide = document.querySelector('.wrapper-images')
+    const slide = wraper.current
     if (slide) {
       console.log('Кубик существует')
       slide.addEventListener('touchstart', StartTouchX, { passive: true })
@@ -93,7 +93,7 @@ export default function DoctorsPage() {
     slider.style.transform = `translateX(${offset}%)`
   }, [currentSlide, lengthArrPhotos])
   return (
-    <div className='DoctorsPage'>
+    <div className='DoctorsPage' id='doctor'>
       <div className="titleCardPage">
         <h2>О здоровье и красоте вашей улыбки
           позаботится наша команда врачей</h2>

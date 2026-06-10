@@ -1,4 +1,4 @@
-        import Link from 'next/link'
+import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
 
@@ -9,36 +9,36 @@ export default function ServicesPage() {
             title: 'Пародантология',
             description: 'Лечение и профилактика десен',
             imgUrl: 'Parodontoloia2.png',
-            href: '/',
+            href: '/docs/НОВЫЙ ПРАЙС мой (2).pdf',
         },
         {
             title: 'Протезирование',
             description: 'Восстановление отсутствующих зубов',
             imgUrl: 'Protezirovanie.png',
-            href: '/',
+            href: '/docs/НОВЫЙ ПРАЙС мой (2).pdf',
         },
         {
             title: 'Гигиена полости рта',
             description: 'Чистка ультразвуком и Air-flow.',
             imgUrl: 'ComplexGigiena.png',
-            href: '/',
+            href: '/docs/НОВЫЙ ПРАЙС мой (2).pdf',
         },
         {
             title: 'Лечение зубов',
             description: 'Устранение кариеса, пульпита',
             imgUrl: 'HealthT.jpg',
-            href: '/',
+            href: '/docs/НОВЫЙ ПРАЙС мой (2).pdf',
         },
         {
             title: 'Эстетическая стоматология',
             description: 'Красота и форма зубов',
             imgUrl: 'EsteticDental.png',
-            href: '/'
+            href: '/docs/НОВЫЙ ПРАЙС мой (2).pdf'
         }
     ]
 
     return (
-        <div className='servicesPage'>
+        <div className='servicesPage' id='services'>
             <div className='titleCardPage'>
                 <h2>Наши услуги</h2>
                 <p>Консультация → Индивидуальный план → Комплексное лечение. Всё для здоровья вашей улыбки в одной клинике.</p>
@@ -52,7 +52,7 @@ export default function ServicesPage() {
                                     <h4>{card.title}</h4>
                                     <p>{card.description}</p>
                                     <button className='buttonCard'>
-                                        <Link href={card.href}>Подробне </Link>
+                                        <Link href={card.href} target="_blank" rel="noopener noreferrer">Подробне </Link>
                                     </button>
                                 </div>
                                 <Image src={`/services/${card.imgUrl}`} alt={card.title} width={150} height={150} className='imgCard'></Image>

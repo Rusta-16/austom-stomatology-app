@@ -10,26 +10,35 @@ export default function Header() {
   const navHamburger = [
     {
       title: 'О нас',
-      path: '#'
+      path: 'start'
     },
     {
       title: 'Услуги',
-      path: '#'
+      path: 'services'
     },
     {
       title: 'Врачи',
-      path: '#'
+      path: 'doctor'
     },
     {
       title: 'Контакты',
-      path: '#'
+      path: 'note'
     },
     {
       title: 'Отзывы',
-      path: '#'
+      path: 'rewiew'
     }
   ]
-
+  function scrollToSection(id) {
+    if (typeof window !== 'undefined') {
+      document.getElementById(id)?.scrollIntoView({
+        behavior: 'smooth'
+      })
+    }
+    if(showHumburgerMenu){
+      handelNav()
+    }
+  }
   function handelNav() {
     setshowHumburgerMenu(!showHumburgerMenu)
   }
@@ -43,7 +52,7 @@ export default function Header() {
           <Image src='/header/phone.svg' alt='телефон' width={10} height={10}></Image>
         </Link>
       </div>
-      <Link href="/" className='logo'>
+      <Link href="/" className='logo' onClick={()=> scrollToSection('start')}>
         <Image src="/logo_full_pink.png" alt='Логотип' width={150} height={50}></Image>
       </Link>
       <button id='humburgerBut' onClick={handelNav} className={showHumburgerMenu ? 'menuShow' : ""}>
@@ -55,7 +64,7 @@ export default function Header() {
         {
           navHamburger.map((item, id) => {
             return (
-              <Link key={id} href={item.path}>{item.title}</Link>
+              <button onClick={() => scrollToSection(item.path)} key={id}>{item.title}</button>
             )
           })
         }

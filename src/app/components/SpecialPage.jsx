@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import ButtonSpecial from './ui/Buttons/ButtonSpecial'
 
 export default function SpecialPage() {
   return (
@@ -12,7 +13,7 @@ export default function SpecialPage() {
                 <div className="offerText">
                     <h4>Скидка участникам СВО <span>10%</span></h4>
                     <p>При предъявлении справки участника СВО</p>
-                    <button className='buttonCard'><Link href=''>Записаться на приём</Link></button>
+                    <ButtonSpecial />
                     <Image src='/procent.png' alt='процент' id='procent' width={200} height={100}></Image>
                 </div>
             </div>
@@ -21,7 +22,7 @@ export default function SpecialPage() {
                 <div className="offerText">
                     <h4>Скидка на коплестную гигиену полости рта <span>10%</span></h4>
                     <p>Данное предложение актуально до 01.01.2027</p>
-                    <button className='buttonCard'><Link href=''>Записаться на приём</Link></button>
+                    <ButtonSpecial />
                     <Image src='/procent.png' alt='процент' id='procent' width={200} height={100}></Image>
                 </div>
             </div> 

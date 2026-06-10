@@ -1,17 +1,17 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
+import Buttom from './ui/Buttons/ButtomStart'
 
 export default function StartPage() {
   return (
-    <div className='startPage'>
+    <div className='startPage' id='start'>
       <div className='startDescription'>
         <h2>Забота о ваших зубах - наша работа</h2>
         <p id='pM'>Комфортное лечение
           и забота о здоровье зубов
           в современной клинике Ростова-на-Дону</p>
-        <p id='pD'>Комфортное и безболезненное лечение зубов с применением современных технологий и индивидуального подхода.<br/> Мы создаём условия, в которых забота о здоровье вашей улыбки становится простой и приятной.</p>
-        <button className='buttonForReception'><Link href=''>Записаться на приём</Link></button>
+        <p id='pD'>Комфортное и безболезненное лечение зубов с применением современных технологий и индивидуального подхода.<br /> Мы создаём условия, в которых забота о здоровье вашей улыбки становится простой и приятной.</p>
+        <Buttom />
       </div>
       <div className="infoBlock">
         <div className='imgGirlWithToothbrush'>

@@ -64,30 +64,3 @@ span {
     color: project-variables.$pink-color;
 }
 
-.buttonCard {
-    background-color: project-variables.$pink-color;
-    display: flex;
-    border: none;
-    justify-content: center;
-    border-radius: 30px;
-    padding: 0.5rem;
-    width: clamp(8rem, 3.13rem + 22.26vw, 24rem);
-
-    a {
-        color: project-variables.$p-font-color;
-        font-weight: 500;
-        font-size: clamp(0.6rem, 0.174rem + 1.95vw, 2rem);
-        align-items: center;
-        justify-content: center;
-    }
-
-    &:hover {
-        background-color: #d8aeab;
-
-        a {
-            color: #000000;
-        }
-
-        transition: all 0.4s ease-in-out;
-    }
-}

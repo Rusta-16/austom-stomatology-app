@@ -10,7 +10,7 @@ export default function ClinicIntoPage() {
 
     const wraper = useRef(null)
     useEffect(() => {
-        const slide = document.querySelector('.wrapper-images')
+        const slide = wraper.current
         if (slide) {
             console.log('Кубик существует')
             slide.addEventListener('touchstart', StartTouchX, { passive: true })
@@ -46,13 +46,14 @@ export default function ClinicIntoPage() {
 
     }, [])
 
-    function prevSlide() {
-        setCurrentSlide((prev) => prev - 1)
-
-    }
     function nextSlide() {
-        setCurrentSlide((prev) => prev + 1)
+        if (currentSlide >= slides.length - 1) return
+        setCurrentSlide(prev => prev + 1)
+    }
 
+    function prevSlide() {
+        if (currentSlide <= 0) return
+        setCurrentSlide(prev => prev - 1)
     }
 
     const arrPhotoWorks = [
@@ -84,14 +85,24 @@ export default function ClinicIntoPage() {
         const handleTransitionEnd = () => {
             if (currentSlide === slides.length - 1) {
                 slider.style.transition = 'none'
-                slider.offsetHeight
                 setCurrentSlide(1)
+
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        slider.style.transition = 'transform 0.4s ease-in-out'
+                    })
+                })
             }
 
             if (currentSlide === 0) {
                 slider.style.transition = 'none'
-                slider.offsetHeight
                 setCurrentSlide(slides.length - 2)
+
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        slider.style.transition = 'transform 0.4s ease-in-out'
+                    })
+                })
             }
         }
 
@@ -101,12 +112,17 @@ export default function ClinicIntoPage() {
             slider.removeEventListener('transitionend', handleTransitionEnd)
         }
     }, [currentSlide])
+    const getSlideWidth = () => {
+        const slide = wraper.current?.querySelector('.imgRoom')
+        return slide ? slide.offsetWidth + 16 : 0
+    }
     useEffect(() => {
         const slider = wraper.current
         if (!slider) return
 
+        const slideWidth = getSlideWidth()
         slider.style.transition = 'transform 0.4s ease-in-out'
-        slider.style.transform = `translateX(-${currentSlide * 100}%)`
+        slider.style.transform = `translateX(-${currentSlide * slideWidth}px)`
     }, [currentSlide])
 
     return (

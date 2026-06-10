@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function FootnotePage() {
     return (
-        <div className='FootnotePage'>
+        <div className='FootnotePage' id='note'>
             <Image src='/GenDoct.svg' alt='Ген-дир' id='gen-doct-image' width={100} height={100}></Image>
             <div className="textWithIcon">
                 <div className="text">

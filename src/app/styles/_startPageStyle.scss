@@ -53,31 +53,7 @@
         }
 
 
-        .buttonForReception {
-            background-color: project-variables.$pink-color;
-            padding: 0.75rem 1.2rem;
-            margin-top: clamp(1.563rem, 1.467rem + 0.43vw, 1.875rem);
-            border: none;
-            border-radius: 35px;
-            justify-items: start;
-            width: clamp(15rem, 7.391rem + 34.78vw, 40rem);
-
-            a {
-                color: #FFFAFA;
-                font-size: clamp(1rem, 0.696rem + 1.39vw, 2rem);
-            }
-
-            &:hover {
-                background-color: #d8aeab;
-
-                a {
-                    color: #000000;
-                    transition: all 0.4s ease-in-out;
-                }
-
-                transition: all 0.4s ease-in-out;
-            }
-        }
+        
     }
 
     .infoBlock {

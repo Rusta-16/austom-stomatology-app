@@ -64,12 +64,13 @@
             order: 2;
         }
 
-        a {
+        button {
             color: project-variables.$p-font-color;
             text-decoration: none;
             font-size: clamp(1.25rem, 0.7759rem + 0.8148vw, 1.55rem);
             font-weight: 500;
             padding-top: 2vw;
+            border: none;
 
 
 
@@ -86,7 +87,7 @@
             visibility: visible;
             transform: scale(1) translateY(0);
 
-            a {
+            button {
                 border-bottom: solid 1px rgba(255, 198, 196, 0.62);
                 padding-bottom: 1px;
             }

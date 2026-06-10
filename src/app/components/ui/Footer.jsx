@@ -8,13 +8,11 @@ export default function Footer() {
             <div className="licenseBlock">
                 <div className="licenses">
                     <h3>Лицензии Министерства здравоохранения РО</h3>
-
-                    <a href="/docs/заключение.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href="/docs/Л041-01050-61_00379576.pdf" target="_blank" rel="noopener noreferrer">
                         Лицензия ООО “Аюстом”
                     </a>
-
-                    <a href="#">Заключение</a>
-                    <a href="#">Карта партнера</a>
+                    <a href="/docs/заключение.pdf" target="_blank" rel="noopener noreferrer">Заключение</a>
+                    <a href="/docs/КАРТА ПАРТНЕРА ООО АЮСТОМ.pdf">Карта партнера</a>
                 </div>
 
                 <Link href="/" className='logo'>
@@ -52,7 +50,7 @@ export default function Footer() {
                 <div className="contacts">
                     <div className="cont">
                         <Image src='/Future.svg' alt='время' width={10} height={10}></Image>
-                        <p>Режим работы:<br/> пн-пт 9:00-20:00сб 9:00-14:00, вс - выходной</p>
+                        <p>Режим работы:<br /> пн-пт 9:00-20:00сб 9:00-14:00, вс - выходной</p>
                     </div>
                     <div className="cont">
                         <Link href="tel:/+79604433999" target="_blank" rel="noopener noreferrer">

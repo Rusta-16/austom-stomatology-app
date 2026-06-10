@@ -13,7 +13,7 @@ export default function ExampleOurWorks() {
     const [currentSlide, setCurrentSlide] = useState(6)
     const wraper = useRef(null)
     useEffect(() => {
-        const slide = document.querySelector('.wrapper-images')
+        const slide = wraper.current
         if (slide) {
             console.log('Кубик существует')
             slide.addEventListener('touchstart', StartTouchX, { passive: true })

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function ReviewsPage() {
   return (
-    <div className="ReviewsPage">
+    <div className="ReviewsPage" id='rewiew'>
       <h2>Отзывы</h2>
       <div className="widget">
         <iframe

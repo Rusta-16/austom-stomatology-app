@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
+import ButtonTeam from './ui/Buttons/ButtonTeam'
 
 export default function TeamPage() {
     return (
@@ -11,7 +11,7 @@ export default function TeamPage() {
             </div>
             <div className="imgWithBut">
                 <Image src='/team2.svg' alt='Команда стоматологов' width={400} height={300}></Image>
-                <button className='buttonCard'><Link href=''>Записаться на приём</Link></button>
+                <ButtonTeam />
             </div>
         </div>
     )

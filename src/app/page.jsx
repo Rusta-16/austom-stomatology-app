@@ -1,5 +1,3 @@
-import React from 'react'
-import Header from './components/ui/Header'
 import StartPage from './components/StartPage'
 import AdvantagesPage from './components/AdvantagesPage'
 import ServicesPage from './components/ServicesPage'
@@ -10,21 +8,26 @@ import DoctorsPage from './components/DoctorsPage'
 import FootnotePage from './components/FootnotePage'
 import SpecialPage from './components/SpecialPage'
 import ReviewsPage from './components/ReviewsPage'
+import ShowForm from './components/ui/ShowForm'
 
 
 export default function page() {
+
   return (
-    <main>
-      <StartPage />
-      <AdvantagesPage />
-      <ServicesPage />
-      <ExampleOurWorks />
-      <ClinicIntoPage />
-      <TeamPage />
-      <DoctorsPage />
-      <FootnotePage />
-      <SpecialPage />
-      <ReviewsPage />
-    </main>
+    <ShowForm>
+      <main>
+        <StartPage />
+        <AdvantagesPage />
+        <ServicesPage />
+        <ExampleOurWorks />
+        <ClinicIntoPage />
+        <TeamPage />
+        <DoctorsPage />
+        <FootnotePage />
+        <SpecialPage />
+        <ReviewsPage />
+      </main>
+    </ShowForm>
+
   )
 }
