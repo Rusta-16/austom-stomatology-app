@@ -64,7 +64,7 @@ export default function ExampleOurWorks() {
             afterImgUrl: 'work1a.jpg'
         },
         {
-            beforeImgUrl: 'work2b.jpg',
+            beforeImgUrl: 'workBabka.jpg',
             afterImgUrl: 'work2a.jpg'
         },
         {
@@ -74,6 +74,22 @@ export default function ExampleOurWorks() {
         {
             beforeImgUrl: 'work4b.jpg',
             afterImgUrl: 'work4a.jpg'
+        },
+        {
+            beforeImgUrl: 'work5b.jpg',
+            afterImgUrl: 'work5a.jpg'
+        },
+        {
+            beforeImgUrl: 'work6b.jpg',
+            afterImgUrl: 'work6a.jpg'
+        },
+        {
+            beforeImgUrl: 'work7b.jpg',
+            afterImgUrl: 'work7a.jpg'
+        },
+        {
+            beforeImgUrl: 'work8b.jpg',
+            afterImgUrl: 'work8a.jpg'
         }
     ]
 
@@ -84,7 +100,7 @@ export default function ExampleOurWorks() {
         ...arrPhotoWorks,
         ...arrPhotoWorks
     ]
-    
+
     useEffect(() => {
         const slider = wraper.current
         if (!slider) return
@@ -111,8 +127,8 @@ export default function ExampleOurWorks() {
                                 extendedSlides.map((imgUrl, id) => {
                                     return (
                                         <div key={id} className='imgWorks'>
-                                            <Image src={`/works/before/${imgUrl.beforeImgUrl}`} alt='фото после' width={400} height={200}></Image>
-                                            <Image src={`/works/after/${imgUrl.afterImgUrl}`} alt='Фото до' width={400} height={200}></Image>
+                                            <Image src={`/works/before/${imgUrl.beforeImgUrl}`} alt='фото до' width={400} height={200}></Image>
+                                            <Image src={`/works/after/${imgUrl.afterImgUrl}`} alt='Фото после' width={400} height={200}></Image>
                                         </div>
                                     )
 

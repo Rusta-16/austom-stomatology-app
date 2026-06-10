@@ -19,7 +19,7 @@ export default function ServicesPage() {
         },
         {
             title: 'Гигиена полости рта',
-            description: 'Чистка ультразвуком и Air-flow.',
+            description: 'Чистка ультразвуком.',
             imgUrl: 'ComplexGigiena.png',
             href: '/docs/НОВЫЙ ПРАЙС мой (2).pdf',
         },
@@ -61,7 +61,7 @@ export default function ServicesPage() {
                     })
                 }
             </section>
-            <button className='buttonForPrice'><Link  href=''>Посмотреть весь прайс</Link></button>
+            {/* <button className='buttonForPrice'><Link  href=''>Посмотреть весь прайс</Link></button> */}
         </div>
     )
 }
