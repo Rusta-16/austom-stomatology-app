@@ -7,7 +7,7 @@ const nextConfig = {
       {
         source: '/action.html',
         destination: '/',
-        permanent: true, // 301 редирект
+        permanent: true, 
       },
     ];
   },
