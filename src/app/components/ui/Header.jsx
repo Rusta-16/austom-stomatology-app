@@ -35,7 +35,7 @@ export default function Header() {
         behavior: 'smooth'
       })
     }
-    if(showHumburgerMenu){
+    if (showHumburgerMenu) {
       handelNav()
     }
   }
@@ -48,11 +48,11 @@ export default function Header() {
         <Link href="https://yandex.ru/maps/-/CPTKBBPq" target="_blank" rel="noopener noreferrer">
           <Image src='/header/location.svg' alt='карта' width={10} height={10}></Image>
         </Link>
-        <Link href="tel:+79999999999" target="_blank" rel="noopener noreferrer">
+        <Link href="tel:+79604433999" target="_blank" rel="noopener noreferrer">
           <Image src='/header/phone.svg' alt='телефон' width={10} height={10}></Image>
         </Link>
       </div>
-      <Link href="/" className='logo' onClick={()=> scrollToSection('start')}>
+      <Link href="/" className='logo' onClick={() => scrollToSection('start')}>
         <Image src="/logo_full_pink.png" alt='Логотип' width={150} height={50}></Image>
       </Link>
       <button id='humburgerBut' onClick={handelNav} className={showHumburgerMenu ? 'menuShow' : ""}>

@@ -9,6 +9,7 @@
   padding: clamp(0.4rem, 2vw, 1rem);
   z-index: 100;
   background-color: rgba(250, 250, 255, 0.93);
+  max-height: 90px;
 }
 @media (min-width: 704px) {
   .header {
@@ -21,6 +22,11 @@
 .header .logo img {
   width: clamp(120px, 20vw, 150px);
   height: inherit;
+}
+@media (min-width: 704px) {
+  .header .logo img {
+    order: 1;
+  }
 }
 .header nav {
   display: flex;
@@ -54,16 +60,18 @@
     visibility: visible;
     background-color: transparent;
     gap: clamp(0.75rem, 0.17rem + 3.019vw, 3rem);
+    order: 2;
   }
 }
-.header nav a {
+.header nav button {
   color: #2a2a2a;
   text-decoration: none;
   font-size: clamp(1.25rem, 0.7759rem + 0.8148vw, 1.55rem);
   font-weight: 500;
   padding-top: 2vw;
+  border: none;
 }
-.header nav a:hover {
+.header nav button:hover {
   color: #FFC6C4;
   transition: all 0.3s ease-in;
 }
@@ -74,7 +82,7 @@
   visibility: visible;
   transform: scale(1) translateY(0);
 }
-.header nav.showNavMobile a {
+.header nav.showNavMobile button {
   border-bottom: solid 1px rgba(255, 198, 196, 0.62);
   padding-bottom: 1px;
 }
@@ -108,7 +116,7 @@
   transform: rotate(45deg) translate(5px, 5px);
 }
 .header #humburgerBut.menuShow span:nth-child(2) {
-  transform: translateX(-100px);
+  transform: translateX(100px);
 }
 .header #humburgerBut.menuShow span:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -6px);
@@ -117,6 +125,12 @@
 .butForPhoneWithLocation {
   display: flex;
   flex-direction: row;
+  gap: 0.4rem;
+}
+@media (min-width: 704px) {
+  .butForPhoneWithLocation {
+    order: 3;
+  }
 }
 .butForPhoneWithLocation a {
   display: flex;
@@ -125,73 +139,130 @@
 .butForPhoneWithLocation a img {
   display: block;
   height: auto;
-  width: clamp(30px, 3.5vw, 35px);
+  width: clamp(1.375rem, 1.217rem + 0.7vw, 1.875rem);
 }
 
 .startPage {
   display: flex;
-  flex-direction: row;
-  height: 100vh;
-  padding: 0 clamp(1rem, 4vw, 7rem);
+  flex-direction: column;
+  padding-top: clamp(5rem, 4.391rem + 2.78vw, 7rem);
+  width: 100%;
+  height: auto;
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 780px) {
+@media (min-width: 704px) {
   .startPage {
-    align-items: none;
-    height: auto;
-    padding-top: 10vw;
+    flex-direction: row;
+    align-items: start;
   }
-}
-.startPage .imgGirlWithToothbrush {
-  position: relative;
-}
-.startPage .imgGirlWithToothbrush img {
-  padding-top: 9vw;
-  width: clamp(140px, 25vw, 400px);
-  height: auto;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
-  will-change: filter;
 }
 .startPage .startDescription {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.313rem, -2.671rem + 10.849vw, 7.5rem);
-  padding-top: clamp(2.5rem, 1.1852rem + 3.963vw, 10rem);
+  gap: clamp(0.3rem, -0.37rem + 3.06vw, 2.5rem);
+  padding: 0 clamp(1rem, 4vw, 7rem);
 }
-@media (min-width: 780px) {
+.startPage .startDescription #pM {
+  display: block;
+}
+.startPage .startDescription #pD {
+  display: none;
+}
+@media (min-width: 704px) {
   .startPage .startDescription {
-    gap: 2.2rem;
+    padding-top: 6rem;
+  }
+  .startPage .startDescription #pM {
+    display: none;
+  }
+  .startPage .startDescription #pD {
+    display: block;
   }
 }
 .startPage .startDescription h2 {
   font-weight: 600;
-  font-size: clamp(1.2rem, 0.1698rem + 3.0189vw, 3rem);
+  max-width: 950px;
+  font-size: clamp(2rem, 1.696rem + 1.39vw, 3rem);
 }
 .startPage .startDescription p {
-  font-size: clamp(0.955rem, 0.408rem + 1.6981vw, 2rem);
+  max-width: 700px;
+  font-size: clamp(1.2rem, 1.017rem + 0.83vw, 1.8rem);
 }
-.startPage .startDescription .buttonForReception {
-  background-color: #FFC6C4;
-  padding: 0.5rem 1rem;
-  margin-top: 6vw;
-  border: none;
-  border-radius: 35px;
-  justify-items: start;
-  width: clamp(12rem, 45vw, 40rem);
+.startPage .infoBlock {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
-.startPage .startDescription .buttonForReception a {
-  color: #2a2a2a;
-  font-size: clamp(0.7rem, 0.1804rem + 1.8259vw, 1.8rem);
+.startPage .infoBlock .imgGirlWithToothbrush {
+  height: clamp(18.75rem, 14.205rem + 22.73vw, 31.25rem);
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
-.startPage .startDescription .buttonForReception:hover {
-  background-color: #d8aeab;
+.startPage .infoBlock .imgGirlWithToothbrush #rounds {
+  position: absolute;
+  width: clamp(20rem, 10.182rem + 49.09vw, 47rem);
+  height: clamp(20rem, 10.182rem + 49.09vw, 47rem);
+  right: 0;
+  transform: translateX(0%) translateY(0%);
+  filter: none;
+  z-index: -1;
 }
-.startPage .startDescription .buttonForReception:hover a {
-  color: #000000;
+.startPage .infoBlock .imgGirlWithToothbrush #girl {
+  position: absolute;
+  padding-top: 9vw;
+  width: clamp(9rem, 5.152rem + 14.3vw, 20rem);
+  height: inherit;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
+  will-change: filter;
+  z-index: 1;
 }
-.startPage .startDescription .buttonForReception:hover {
-  transition: all 0.4s ease-in-out;
+@media (min-width: 704px) {
+  .startPage .infoBlock .imgGirlWithToothbrush #girl {
+    padding-top: 0;
+  }
+}
+.startPage .infoBlock .blockAdvIcons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  transform: translateY(0%);
+  box-sizing: border-box;
+  z-index: 1;
+}
+.startPage .infoBlock .blockAdvIcons .advIcons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0 0.5rem;
+  padding: 0.5rem 0.5rem;
+  gap: 0.2rem;
+  background-color: white;
+  justify-items: center;
+  box-sizing: border-box;
+  border-radius: 1rem;
+}
+.startPage .infoBlock .blockAdvIcons .advIcons .colRet {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+.startPage .infoBlock .blockAdvIcons .advIcons .colRet img {
+  width: clamp(1rem, 0.273rem + 3.64vw, 3rem);
+  height: clamp(1rem, 0.273rem + 3.64vw, 3rem);
+}
+.startPage .infoBlock .blockAdvIcons .advIcons .colRet .iconText {
+  font-size: clamp(0.8rem, 0.655rem + 0.73vw, 1.2rem);
+}
+.startPage .infoBlock .blockAdvIcons .advIcons .colRet p {
+  font-size: clamp(0.8rem, 0.655rem + 0.73vw, 1.2rem);
+  text-align: center;
 }
 
 .AdvantagesPage {
@@ -260,11 +331,11 @@
 .servicesPage {
   display: flex;
   flex-direction: column;
-  padding: clamp(3rem, -0.333rem + 6.67vw, 6rem) clamp(1rem, 4vw, 7rem) 0 clamp(1rem, 4vw, 7rem);
   gap: 3rem;
 }
 .servicesPage .titleCardPage {
   text-align: center;
+  padding: clamp(3rem, -0.333rem + 6.67vw, 6rem) clamp(1rem, 4vw, 7rem) 0 clamp(1rem, 4vw, 7rem);
 }
 .servicesPage .titleCardPage h2 {
   font-size: clamp(1rem, 0.4704rem + 1.9259vw, 2.3rem);
@@ -288,19 +359,19 @@
 }
 .servicesPage section {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
 }
 .servicesPage section .serviceCard {
   z-index: 0;
   position: relative;
-  width: clamp(18.75rem, 12.5rem + 26.32vw, 37.5rem);
-  height: clamp(10.625rem, 7.5rem + 12.5vw, 19.375rem);
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  width: clamp(18.75rem, 15.5rem + 20vw, 32.5rem);
+  height: clamp(8.125rem, 5.055rem + 13.27vw, 17.5rem);
   gap: 1rem;
+  text-align: left;
+  padding-left: 1rem;
   border: solid 3px #A2E2F9;
   border-radius: 20px;
   box-shadow: -8px 7px 16px -9px rgba(42, 42, 42, 0.19), inset 0px 0px 41px -14px rgba(162, 226, 249, 0.66);
@@ -308,42 +379,33 @@
   animation-timeline: view();
   animation-range: entry 0;
 }
-.servicesPage section .serviceCard:nth-child(3) .serviceCardText {
-  gap: 0.5rem;
-}
-.servicesPage section .serviceCard:nth-child(3) .serviceCardText h4 {
-  font-size: clamp(0.75rem, 0.482rem + 1.07vw, 1.5rem);
-}
 .servicesPage section .serviceCard .serviceCardText {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   justify-content: center;
-  align-items: center;
-  width: 58%;
+  width: 50%;
+  padding: 1rem 0 1rem 0;
 }
 .servicesPage section .serviceCard .serviceCardText p {
-  font-size: clamp(0.8rem, 0.514rem + 1.14vw, 1.6rem);
+  font-size: clamp(0.65rem, 0.45rem + 1vw, 1.2rem);
   display: inline-block;
   width: 72%;
-  margin: 0 auto;
   text-align: left;
 }
 .servicesPage section .serviceCard .serviceCardText h4 {
-  font-size: clamp(0.8rem, 0.4rem + 1.6vw, 1.6rem);
+  font-size: clamp(0.75rem, 0.477rem + 1.36vw, 1.5rem);
   display: inline-block;
+  margin-bottom: -3%;
   width: 72%;
-  margin: 0 auto;
   text-align: left;
 }
 .servicesPage section .serviceCard .serviceCardText .buttonCard {
   background-color: #FFC6C4;
   display: flex;
   border: none;
-  align-self: start;
-  align-items: center;
+  margin-top: auto;
   justify-content: center;
-  margin-left: clamp(1.522rem, 0.987rem + 2.14vw, 3.018rem);
   border-radius: 30px;
   padding: 0.5rem;
   width: clamp(4.5rem, 0.973rem + 14.11vw, 14.375rem);
@@ -366,21 +428,25 @@
 }
 .servicesPage section .serviceCard .imgCard {
   position: absolute;
-  right: -0.7%;
-  top: -1.5%;
+  right: -2%;
+  top: -1%;
   z-index: 1;
-  width: clamp(7.938rem, 4.094rem + 15.38vw, 15.625rem);
-  height: clamp(7.938rem, 4.094rem + 15.38vw, 15.625rem);
-  border-radius: 50% 10.5% 45% 50%;
+  width: 50%;
+  height: 102%;
+  border-radius: 50% 10.5% 10.5% 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .servicesPage .buttonForPrice {
   background-color: #FFC6C4;
-  padding: 0.5rem 1rem;
-  margin-top: 6vw;
+  padding: 0.5rem 0;
+  margin-top: -1rem;
   border: none;
+  display: flex;
+  justify-content: center;
   border-radius: 35px;
-  justify-items: start;
-  width: clamp(12rem, 45vw, 40rem);
+  align-self: center;
+  width: clamp(12rem, 6.106rem + 25.49vw, 30rem);
 }
 .servicesPage .buttonForPrice a {
   color: #2a2a2a;
@@ -400,6 +466,13 @@
   display: flex;
   flex-direction: column;
   padding: clamp(3rem, -0.333rem + 6.67vw, 6rem) clamp(1rem, 4vw, 7rem) 0 clamp(1rem, 4vw, 7rem);
+  margin-bottom: clamp(1.5rem, 0.435rem + 4.87vw, 5rem);
+  box-sizing: border-box;
+  background-image: url("/background.svg");
+  width: 100%;
+  background-size: cover;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .ExampleWorksPage .blockExamleWorks {
   text-align: center;
@@ -414,16 +487,17 @@
   padding-top: 0.2rem;
   font-size: clamp(0.85rem, 0.439rem + 1.64vw, 2rem);
 }
-.ExampleWorksPage .blockExamleWorks .blockImgWorksWithBut .cubik {
-  width: 100px;
-  height: 100px;
-  background-color: red;
+.ExampleWorksPage .blockExamleWorks #clean {
+  border: none;
+  margin-top: 2rem;
 }
 .ExampleWorksPage .blockExamleWorks .blockImgWorksWithBut {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   gap: 1rem;
+  margin-top: 2rem;
 }
 .ExampleWorksPage .blockExamleWorks .blockImgWorksWithBut .arrow {
   font-family: "Montserrat", sans-serif;
@@ -431,7 +505,9 @@
   color: #000000;
   border-radius: 100%;
   font-size: 2rem;
-  padding: 10px;
+  padding: 12px;
+  min-width: 2rem;
+  min-width: 2rem;
   background-color: #FFC6C4;
   cursor: pointer;
 }
@@ -442,15 +518,625 @@
   color: #000000;
 }
 .ExampleWorksPage .blockExamleWorks .blockImgWorksWithBut .arrow:hover {
-  transition: all 0.4s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
-.ExampleWorksPage .blockExamleWorks .blockImgWorksWithBut .blockImgWorks {
-  display: grid;
-  gap: 20px;
+.ExampleWorksPage .blockExamleWorks .blockImgWorksWithBut .wrapper-images {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
 }
-.ExampleWorksPage .blockExamleWorks .blockImgWorksWithBut .blockImgWorks .imgWorks {
-  display: grid;
-  grid-template-columns: 1fr;
+.ExampleWorksPage .blockExamleWorks .blockImgWorksWithBut .wrapper-images .blockImgWorks {
+  display: flex;
+  flex-direction: row;
+  width: clamp(12.5rem, 4.891rem + 34.78vw, 37.5rem);
+  height: clamp(25rem, 11.685rem + 60.87vw, 68.75rem);
+  transition: transform 0.4s ease-in-out;
+}
+.ExampleWorksPage .blockExamleWorks .blockImgWorksWithBut .wrapper-images .blockImgWorks .imgWorks {
+  min-width: 100%;
+  height: clamp(12.5rem, 4.891rem + 34.78vw, 37.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.ExampleWorksPage .blockExamleWorks .blockImgWorksWithBut .wrapper-images .blockImgWorks .imgWorks img {
+  width: 100%;
+  height: 90%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+}
+
+.ClinicIntoPage {
+  display: flex;
+  flex-direction: column;
+  padding: 0 clamp(1rem, 4vw, 7rem);
+}
+.ClinicIntoPage .blockImgRoomsWithBut {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.ClinicIntoPage .blockImgRoomsWithBut .arrow {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #000000;
+  border-radius: 100%;
+  font-size: 2rem;
+  padding: 12px;
+  height: clamp(2rem, 1.636rem + 1.82vw, 3rem);
+  width: clamp(2rem, 1.636rem + 1.82vw, 3rem);
+  background-color: #FFC6C4;
+  cursor: pointer;
+}
+.ClinicIntoPage .blockImgRoomsWithBut .arrow:hover {
+  background-color: #d8aeab;
+}
+.ClinicIntoPage .blockImgRoomsWithBut .arrow:hover a {
+  color: #000000;
+}
+.ClinicIntoPage .blockImgRoomsWithBut .arrow:hover {
+  transition: all 0.8s ease-in-out;
+}
+.ClinicIntoPage .blockImgRoomsWithBut .wrapper-images {
+  display: flex;
+  overflow: hidden;
+}
+.ClinicIntoPage .blockImgRoomsWithBut .wrapper-images .blockImgRoom {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  gap: 1rem;
+  width: -moz-max-content;
+  width: max-content;
+  width: clamp(10rem, 80vw, 150rem);
+}
+.ClinicIntoPage .blockImgRoomsWithBut .wrapper-images .blockImgRoom .imgRoom {
+  flex: 0 0 calc((100% - 2rem) / 3);
+}
+.ClinicIntoPage .blockImgRoomsWithBut .wrapper-images .blockImgRoom .imgRoom img {
+  width: 100%;
+  height: 100%;
+}
+
+.TeamPage {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-image: url("/background.svg");
+  width: 100%;
+  background-size: cover;
+  box-sizing: border-box;
+}
+.TeamPage .titleCardPage {
+  text-align: center;
+  padding: clamp(3rem, -0.333rem + 6.67vw, 6rem) clamp(1rem, 4vw, 7rem) 0 clamp(1rem, 4vw, 7rem);
+}
+.TeamPage .titleCardPage h2 {
+  font-size: clamp(1rem, 0.4704rem + 1.9259vw, 2.3rem);
+  justify-self: center;
+  margin-bottom: 0.5rem;
+}
+.TeamPage .titleCardPage p {
+  border-top: solid 3px #FFC6C4;
+  padding-top: 0.2rem;
+  font-size: clamp(0.85rem, 0.439rem + 1.64vw, 2rem);
+}
+.TeamPage .imgWithBut {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.TeamPage .imgWithBut img {
+  width: clamp(15rem, 7.391rem + 34.78vw, 40rem);
+  height: clamp(15rem, 7.391rem + 34.78vw, 40rem);
+}
+
+.DoctorsPage {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(175deg, rgba(255, 255, 255, 0) 40%, rgba(255, 198, 196, 0.61) 100%);
+}
+.DoctorsPage .titleCardPage {
+  text-align: center;
+  padding: clamp(3rem, -0.333rem + 6.67vw, 6rem) clamp(1rem, 4vw, 7rem) 0 clamp(1rem, 4vw, 7rem);
+}
+.DoctorsPage .titleCardPage h2 {
+  font-size: clamp(1rem, 0.4704rem + 1.9259vw, 2.3rem);
+  justify-self: center;
+  margin-bottom: 0.5rem;
+}
+.DoctorsPage .titleCardPage p {
+  border-top: solid 3px #FFC6C4;
+  padding-top: 0.2rem;
+  font-size: clamp(0.85rem, 0.439rem + 1.64vw, 2rem);
+  align-items: center;
+}
+
+.blockImgWorksWithBut {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.blockImgWorksWithBut .arrow {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #000000;
+  border-radius: 100%;
+  font-size: 2rem;
+  padding: 10px;
+  height: clamp(2rem, 1.636rem + 1.82vw, 3rem);
+  width: clamp(2rem, 1.636rem + 1.82vw, 3rem);
+  background-color: #FFC6C4;
+  cursor: pointer;
+}
+.blockImgWorksWithBut .arrow:hover {
+  background-color: #d8aeab;
+}
+.blockImgWorksWithBut .arrow:hover a {
+  color: #000000;
+}
+.blockImgWorksWithBut .arrow:hover {
+  transition: all 0.8s ease-in-out;
+}
+.blockImgWorksWithBut .wrapper-images {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+.blockImgWorksWithBut .wrapper-images .blockImgWorks {
+  display: flex;
+  flex-direction: row;
+  width: clamp(12.5rem, 4.891rem + 34.78vw, 37.5rem);
+  transition: transform 0.4s ease-in-out;
+}
+.blockImgWorksWithBut .wrapper-images .blockImgWorks .imgWorks {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.blockImgWorksWithBut .wrapper-images .blockImgWorks .imgWorks h3 {
+  font-size: clamp(0.8rem, 0.374rem + 1.95vw, 2.2rem);
+  border: none;
+  margin-top: 1rem;
+}
+.blockImgWorksWithBut .wrapper-images .blockImgWorks .imgWorks p {
+  border: none;
+  margin-bottom: 1rem;
+}
+.blockImgWorksWithBut .wrapper-images .blockImgWorks .imgWorks img {
+  width: 100%;
+  height: auto;
+}
+
+.FootnotePage {
+  display: flex;
+  flex-direction: row;
+  border-top: solid 3px #A2E2F9;
+  border-bottom: solid 3px #A2E2F9;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 1rem 0.2rem 1rem 0.2rem;
+  gap: clamp(0.5rem, -0.87rem + 6.26vw, 5rem);
+}
+.FootnotePage #gen-doct-image {
+  width: clamp(7rem, 4.87rem + 9.74vw, 14rem);
+  height: clamp(7rem, 4.87rem + 9.74vw, 14rem);
+}
+.FootnotePage .textWithIcon {
+  display: flex;
+  flex-direction: column;
+}
+.FootnotePage .textWithIcon .text p {
+  font-size: clamp(0.75rem, 0.477rem + 1.36vw, 1.5rem);
+}
+.FootnotePage .textWithIcon .text p b {
+  font-weight: 600;
+}
+.FootnotePage .textWithIcon .text #footnote-text {
+  font-size: clamp(0.875rem, 0.472rem + 1.84vw, 2.2rem);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+.FootnotePage .textWithIcon .text #pi {
+  margin: 0.5rem 0 0.2rem 0;
+  font-size: clamp(0.75rem, 0.477rem + 1.36vw, 1.5rem);
+}
+.FootnotePage .textWithIcon .contucts {
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+.FootnotePage .textWithIcon .contucts img {
+  width: clamp(1.5rem, 1.196rem + 1.39vw, 2.5rem);
+  height: clamp(1.5rem, 1.196rem + 1.39vw, 2.5rem);
+}
+
+.SpecialPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(2rem, -0.333rem + 6.67vw, 4rem) clamp(1rem, 4vw, 7rem) 0 clamp(1rem, 4vw, 7rem);
+}
+.SpecialPage h2 {
+  font-size: clamp(1rem, 0.4704rem + 1.9259vw, 2.3rem);
+  margin-bottom: 1.5rem;
+}
+.SpecialPage .specialOfferCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.SpecialPage .specialOfferCol .offer {
+  display: flex;
+  flex-direction: row;
+  border: 3px solid #A2E2F9;
+  border-radius: 20px;
+  gap: 0.5rem;
+}
+.SpecialPage .specialOfferCol .offer .offerText {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: clamp(0.4rem, 0.065rem + 1.53vw, 1.5rem);
+  padding: clamp(0.2rem, -0.348rem + 2.5vw, 1rem);
+  justify-content: center;
+}
+.SpecialPage .specialOfferCol .offer .offerText h4 {
+  font-size: clamp(0.8rem, 0.374rem + 1.95vw, 2.2rem);
+  justify-self: center;
+}
+.SpecialPage .specialOfferCol .offer .offerText p {
+  font-size: clamp(0.8rem, 0.435rem + 1.67vw, 2rem);
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.SpecialPage .specialOfferCol .offer .offerText #procent {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.SpecialPage .specialOfferCol .offer img {
+  width: clamp(7rem, 1.522rem + 25.04vw, 25rem);
+  height: clamp(7rem, 1.522rem + 25.04vw, 25rem);
+  padding-left: clamp(0.2rem, -0.348rem + 2.5vw, 2rem);
+}
+
+span {
+  color: #FFC6C4;
+}
+
+.ReviewsPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 20% 20%, #f0f4ff, transparent 40%), radial-gradient(circle at 80% 80%, #e6fff9, transparent 40%), #f8f9fb;
+  padding: 2rem;
+}
+.ReviewsPage h2 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(1rem, 0.4704rem + 1.9259vw, 2.3rem);
+}
+
+.widget {
+  width: 100%;
+  max-width: 560px;
+  height: 75vh;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), 0 2px 10px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(190px);
+  animation: fadeInUp 1.6s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.widget:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+.widget iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 20px;
+}
+.widget a {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.2px;
+  z-index: 2;
+  transition: 0.2s;
+}
+.widget a:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.Footer {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: linear-gradient(175deg, rgba(255, 255, 255, 0) 10%, rgba(255, 198, 196, 0.61) 100%);
+}
+.Footer .licenseBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 3px solid #A2E2F9;
+  border-bottom: 3px solid #A2E2F9;
+  padding: clamp(0.4rem, 0.182rem + 1.09vw, 1rem);
+}
+.Footer .licenseBlock .licenses {
+  display: flex;
+  flex-direction: column;
+}
+.Footer .licenseBlock .licenses h3 {
+  font-size: clamp(0.875rem, 0.685rem + 0.87vw, 1.5rem);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #A2E2F9;
+}
+.Footer .licenseBlock .licenses a {
+  text-decoration: none;
+  color: #2a2a2a;
+  font-size: clamp(0.5rem, 0.348rem + 0.7vw, 1rem);
+}
+.Footer .contactBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: clamp(0.2rem, -0.348rem + 2.5vw, 1rem);
+  gap: 1rem;
+}
+.Footer .contactBlock .cont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.Footer .contactBlock .cont p {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: clamp(0.8rem, 0.435rem + 1.67vw, 2rem);
+}
+.Footer .contactBlock .cont a {
+  text-decoration: none;
+  color: #2a2a2a;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: clamp(0.8rem, 0.435rem + 1.67vw, 2rem);
+}
+.Footer .contactBlock .cont img {
+  width: clamp(1rem, 0.564rem + 2.18vw, 2.2rem);
+  height: clamp(1rem, 0.564rem + 2.18vw, 2.2rem);
+}
+.Footer .contactBlock .map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #f7faff 0%, #ffffff 100%);
+}
+.Footer .contactBlock .map__frame {
+  position: relative;
+  width: clamp(9.375rem, -2.989rem + 56.52vw, 50rem);
+  height: clamp(8rem, 5rem + 15vw, 16.25rem);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 150, 255, 0.15);
+}
+.Footer .contactBlock .map__frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(0.1) contrast(1.05);
+}
+.Footer .contactBlock .map__overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.Footer .contactBlock .map__overlay a {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px 8px;
+  border-radius: 6px;
+  backdrop-filter: blur(6px);
+  transition: 0.2s;
+}
+.Footer .contactBlock .map__overlay a:hover {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+img {
+  width: clamp(80px, 18vw, 150px);
+  height: inherit;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.modalOverlay .modalContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: url("/bgForm.svg");
+  width: clamp(17.5rem, 10.652rem + 31.3vw, 40rem);
+  height: clamp(17.5rem, 10.652rem + 31.3vw, 40rem);
+  background-size: cover;
+  padding: 1rem 0;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+.modalOverlay .modalContent #faTime {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1000;
+}
+.modalOverlay .modalContent::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 99%;
+  height: 99%;
+  background: white;
+  z-index: -1;
+  border-radius: 2rem;
+}
+.modalOverlay .modalContent form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0;
+}
+.modalOverlay .modalContent form h2 {
+  font-size: clamp(1.2rem, 0.835rem + 1.67vw, 2.4rem);
+  margin-top: 0;
+  justify-self: flex-start;
+}
+.modalOverlay .modalContent form #comment {
+  height: clamp(7rem, 6.087rem + 4.17vw, 10rem);
+}
+.modalOverlay .modalContent form label {
+  display: flex;
+  flex-direction: row;
+  font-size: clamp(0.7rem, 0.548rem + 0.7vw, 1.2rem);
+  gap: 0.5rem;
+  width: clamp(12rem, 9.565rem + 11.13vw, 20rem);
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.modalOverlay .modalContent form label #checkbox {
+  width: clamp(1rem, 0.696rem + 1.39vw, 2rem);
+}
+.modalOverlay .modalContent form input {
+  border-radius: 25px;
+  background-color: white;
+  border: none;
+  padding: clamp(0.35rem, 0.152rem + 0.9vw, 1rem) clamp(0.35rem, 1.6vw, 1.5rem);
+  font-size: clamp(0.85rem, 0.652rem + 0.9vw, 1.5rem);
+}
+.modalOverlay .modalContent form .buttonCard {
+  background-color: #ffc6c4;
+  border: none;
+  border-radius: 30px;
+  justify-content: center;
+  width: clamp(10rem, 5.739rem + 19.48vw, 24rem);
+  padding: 0.5rem;
+  display: flex;
+  font-size: clamp(0.8rem, 0.587rem + 0.97vw, 1.5rem);
+}
+
+.TrueForm {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+.TrueForm .trueBlock {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: clamp(17.5rem, 6.658rem + 49.57vw, 53.125rem);
+  height: clamp(17.5rem, 6.658rem + 49.57vw, 53.125rem);
+  background: url("/bgForm.svg");
+  background-size: cover;
+}
+.TrueForm .trueBlock::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 99%;
+  height: 99%;
+  background: white;
+  z-index: -1;
+  border-radius: 15px;
+}
+.TrueForm .trueBlock #faTime {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1000;
+}
+.TrueForm .trueBlock img {
+  width: clamp(3rem, 2.087rem + 4.17vw, 6rem);
+  height: clamp(3rem, 2.087rem + 4.17vw, 6rem);
+}
+.TrueForm .trueBlock h2 {
+  font-size: clamp(1.2rem, 0.835rem + 1.67vw, 2.4rem);
+}
+.TrueForm .trueBlock p {
+  font-size: clamp(0.85rem, 0.652rem + 0.9vw, 1.5rem);
 }
 
 *,
@@ -472,6 +1158,7 @@ ol {
 
 html {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -481,7 +1168,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
-  background-color: #F0F0FA;
+  background-color: #F8F8FD;
   color: #2a2a2a;
 }
 
@@ -494,4 +1181,75 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+.buttonForReception {
+  background-color: #FFC6C4;
+  padding: 0.75rem 1.2rem;
+  margin-top: clamp(1.563rem, 1.467rem + 0.43vw, 1.875rem);
+  border: none;
+  border-radius: 35px;
+  justify-items: start;
+  width: clamp(15rem, 7.391rem + 34.78vw, 40rem);
+  font-size: clamp(1rem, 0.696rem + 1.39vw, 3rem);
+}
+.buttonForReception:hover {
+  background-color: #d8aeab;
+}
+.buttonForReception:hover a {
+  color: #000000;
+  transition: all 0.4s ease-in-out;
+}
+.buttonForReception:hover {
+  transition: all 0.4s ease-in-out;
+}
+
+.buttonCard {
+  background-color: #FFC6C4;
+  display: flex;
+  border: none;
+  margin-top: auto;
+  justify-content: center;
+  border-radius: 30px;
+  padding: 0.5rem;
+  margin-top: -3vh;
+  width: clamp(8rem, 3.13rem + 22.26vw, 24rem);
+  color: #2a2a2a;
+  font-weight: 500;
+  font-size: clamp(0.6rem, 0.174rem + 1.95vw, 2rem);
+  align-items: center;
+  justify-content: center;
+}
+.buttonCard:hover {
+  background-color: #d8aeab;
+}
+.buttonCard:hover a {
+  color: #000000;
+}
+.buttonCard:hover {
+  transition: all 0.4s ease-in-out;
+}
+
+.buttonCard2 {
+  background-color: #FFC6C4;
+  display: flex;
+  border: none;
+  justify-content: center;
+  border-radius: 30px;
+  padding: 0.5rem;
+  width: clamp(8rem, 3.13rem + 22.26vw, 24rem);
+  color: #2a2a2a;
+  font-weight: 500;
+  font-size: clamp(0.6rem, 0.174rem + 1.95vw, 2rem);
+  align-items: center;
+  justify-content: center;
+}
+.buttonCard2:hover {
+  background-color: #d8aeab;
+}
+.buttonCard2:hover a {
+  color: #000000;
+}
+.buttonCard2:hover {
+  transition: all 0.4s ease-in-out;
 }/*# sourceMappingURL=globals.css.map */
