@@ -25,6 +25,9 @@ export default function FootnotePage() {
                     <Link href="mailto:austom@mail.ru" target="_blank" rel="noopener noreferrer">
                         <Image src='/contacts/Envelope.svg' alt='почта' width={40} height={40}></Image>
                     </Link>
+                    <Link href="tel:+79604433999" target="_blank" rel="noopener noreferrer">
+                        <p>+79604433999</p>
+                    </Link>
                 </div>
             </div>
 

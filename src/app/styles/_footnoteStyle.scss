@@ -23,8 +23,8 @@
         .text {
             p {
                 font-size: clamp(0.75rem, 0.477rem + 1.36vw, 1.5rem);
-                
-                b{
+
+                b {
                     font-weight: 600;
                 }
             }
@@ -43,8 +43,18 @@
         }
 
         .contucts {
+            display: flex;
+            flex-direction: row;
             gap: 0.5rem;
             padding-top: 0.5rem;
+            align-items: center;
+
+            p {
+                color: project-variables.$p-font-color;
+                font-weight: 600;
+                margin-left: 1rem;
+                font-size: clamp(0.75rem, 0.477rem + 1.36vw, 1.5rem);
+            }
 
             img {
                 width: clamp(1.5rem, 1.196rem + 1.39vw, 2.5rem);

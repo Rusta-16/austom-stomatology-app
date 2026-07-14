@@ -2,15 +2,7 @@
 const nextConfig = {
   /* config options here */
   reactCompiler: true,
-  async redirects() {
-    return [
-      {
-        source: '/action.html',
-        destination: '/',
-        permanent: true, 
-      },
-    ];
-  },
+ 
 };
 
 export default nextConfig;
