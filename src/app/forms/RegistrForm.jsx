@@ -1,5 +1,4 @@
 'use client'
-import { createUser } from '@/actions/autefication'
 import { Button, FieldError, Form, Input, Label, TextField } from '@heroui/react'
 import React, { useState } from 'react'
 
@@ -9,20 +8,20 @@ export default function RegistrForm() {
         password: '',
         currentPassword: ''
     })
-    async function handleSubmit(e) {
-        e.preventDefault()
-        const res = await createUser(formData)
-        if (res.success) {
-            console.log('Очистка данных полей')
-            setFormData({
-                login: '',
-                password: '',
-                currentPassword: ''
-            })
-        } else {
-            console.error(res.error)
-        }
-    }
+    // async function handleSubmit(e) {
+    //     e.preventDefault()
+    //     const res = await createUser(formData)
+    //     if (res.success) {
+    //         console.log('Очистка данных полей')
+    //         setFormData({
+    //             login: '',
+    //             password: '',
+    //             currentPassword: ''
+    //         })
+    //     } else {
+    //         console.error(res.error)
+    //     }
+    // }
     return (
         <div className='LoginForm' >
             <div className="wrapperForm">
