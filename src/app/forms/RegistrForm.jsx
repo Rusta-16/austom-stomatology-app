@@ -26,7 +26,7 @@ export default function RegistrForm() {
         <div className='LoginForm' >
             <div className="wrapperForm">
                 <h2>Создание профиля</h2>
-                <Form className="form" onSubmit={handleSubmit}>
+                <Form className="form">
                     <TextField
                         className='textfield'
                         isRequired

@@ -17,7 +17,7 @@ export default function LoginForm() {
     <div className='LoginForm' >
       <div className="wrapperForm">
         <h2>Вход в личный кабинет</h2>
-        <Form className="form" onSubmit={handleSubmit}>
+        <Form className="form">
           <TextField
             className='textfield'
             isRequired
