@@ -20,7 +20,7 @@ export default function SpecialPage() {
             <div className="offer">
                 <Image src='/vrach.svg' alt='Команда стоматологов' width={100} height={100}></Image>
                 <div className="offerText">
-                    <h4>Скидка на коплестную гигиену полости рта <span>10%</span></h4>
+                    <h4>Скидка на коплексную гигиену полости рта <span>10%</span></h4>
                     <p>Данное предложение актуально до 01.01.2027</p>
                     <ButtonSpecial />
                     <Image src='/procent.png' alt='процент' id='procent' width={200} height={100}></Image>
