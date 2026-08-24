@@ -5,20 +5,15 @@ export async function POST(req) {
     const TOKEN = process.env.TELEGRAM_TOKEN
     const CHAT_ID = process.env.TELEGRAM_CHAT_ID
 
+    console.log('TOKEN exists:', Boolean(TOKEN))
+    console.log('CHAT_ID exists:', Boolean(CHAT_ID))
+
     if (!TOKEN) {
-      console.error('TELEGRAM_TOKEN is missing')
-      return Response.json(
-        { ok: false, error: 'TELEGRAM_TOKEN is missing' },
-        { status: 500 }
-      )
+      throw new Error('TELEGRAM_TOKEN is missing')
     }
 
     if (!CHAT_ID) {
-      console.error('TELEGRAM_CHAT_ID is missing')
-      return Response.json(
-        { ok: false, error: 'TELEGRAM_CHAT_ID is missing' },
-        { status: 500 }
-      )
+      throw new Error('TELEGRAM_CHAT_ID is missing')
     }
 
     const message = `
@@ -45,21 +40,15 @@ export async function POST(req) {
 
     const data = await res.json()
 
-    console.log('TELEGRAM RESPONSE:', data)
+    console.log('Telegram HTTP status:', res.status)
+    console.log('Telegram response:', data)
 
     if (!res.ok || !data.ok) {
-      return Response.json(
-        {
-          ok: false,
-          error: data.description || 'Telegram API error',
-        },
-        { status: 500 }
-      )
+      throw new Error(data.description || 'Telegram API error')
     }
 
     return Response.json({
       ok: true,
-      telegram: data,
     })
   } catch (error) {
     console.error('TELEGRAM ERROR:', error)
@@ -67,7 +56,7 @@ export async function POST(req) {
     return Response.json(
       {
         ok: false,
-        error: 'Failed to send Telegram message',
+        error: error instanceof Error ? error.message : String(error),
       },
       { status: 500 }
     )
