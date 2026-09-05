@@ -9,7 +9,7 @@ const montserrat = Montserrat({ subsets: ['latin'] });
 export const metadata = {
   title: {
     template: '%s | Аюстом',
-    default: 'Аюстом', // a default is required when creating a template
+    default: 'Аюстом', // a default is required when creating a templ
   },
 }
 
