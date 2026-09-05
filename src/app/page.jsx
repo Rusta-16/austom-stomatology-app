@@ -11,6 +11,13 @@ import ReviewsPage from './components/ReviewsPage'
 import ShowForm from './components/ui/ShowForm'
 
 
+
+export const metadata = {
+  title: 'Главная',
+  description: 'Стоматология Ростова-на-Дону'
+}
+
+
 export default function page() {
 
   return (

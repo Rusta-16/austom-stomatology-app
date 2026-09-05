@@ -6,6 +6,13 @@ import Footer from "./components/ui/Footer";
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
+export const metadata = {
+  title: {
+    template: '%s | Аюстом',
+    default: 'Аюстом', // a default is required when creating a template
+  },
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
