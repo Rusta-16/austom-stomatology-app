@@ -13,6 +13,9 @@ export const metadata = {
   },
   icons: {
     icon: '/favicon.ico'
+  },
+  other: {
+    'yandex-verification': 'b07a9ec90f9f173f',
   }
 }
 
