@@ -12,6 +12,8 @@
   max-height: 90px;
 }
 
+
+
 /* мобилка */
 @media (min-width: 704px) {
   .header {
