@@ -11,6 +11,8 @@
   background-color: rgba(250, 250, 255, 0.93);
   max-height: 90px;
 }
+
+/* мобилка */
 @media (min-width: 704px) {
   .header {
     display: flex;
