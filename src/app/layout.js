@@ -11,6 +11,9 @@ export const metadata = {
     template: '%s | Аюстом',
     default: 'Аюстом', // a default is required when creating 
   },
+  icons: {
+    icon: '/favicon.ico'
+  }
 }
 
 export default function RootLayout({ children }) {
