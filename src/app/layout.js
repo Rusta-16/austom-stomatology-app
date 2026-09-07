@@ -2,6 +2,8 @@ import { Montserrat } from "next/font/google";
 import './styles/globals.scss';
 import Header from "./components/ui/Header";
 import Footer from "./components/ui/Footer";
+import Head from "next/head";
+import YandexMetrika from "./components/YandexMetrika";
 
 
 const montserrat = Montserrat({ subsets: ['latin'] });
@@ -31,7 +33,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ru">
+      <Head>
+        <link rel="icon" href='/favico.ico'/>
+      </Head>
       <body className={montserrat.className}>
+        <YandexMetrika/>
         <Header />
         <main>{children}</main>
         <Footer />
