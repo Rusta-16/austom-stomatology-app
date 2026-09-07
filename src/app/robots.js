@@ -1,9 +1,9 @@
 export default function robots() {
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
+      userAgent: "*",
+      allow: "/",
     },
-    sitemap: 'https://austom.ru/sitemap.xml',
-  }
+    sitemap: "https://austom.ru/sitemap.xml",
+  };
 }
