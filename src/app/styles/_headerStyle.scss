@@ -67,6 +67,7 @@
         button {
             color: project-variables.$p-font-color;
             text-decoration: none;
+            background-color: transparent;
             font-size: clamp(1.25rem, 0.7759rem + 0.8148vw, 1.55rem);
             font-weight: 500;
             padding-top: 2vw;
