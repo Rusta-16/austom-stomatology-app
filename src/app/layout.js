@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ru">
       <Head>
-        <link rel="icon" href='/favico.ico'/>
+        <link rel="icon" href='/favicon.ico'/>
       </Head>
       <body className={montserrat.className}>
         <YandexMetrika/>

@@ -1,3 +1,4 @@
+'use server'
 import Image from 'next/image'
 import React from 'react'
 import Buttom from './ui/Buttons/ButtomStart'
@@ -15,8 +16,10 @@ export default function StartPage() {
       </div>
       <div className="infoBlock">
         <div className='imgGirlWithToothbrush'>
-          <Image src='/Galina_doctor.svg' width={100} height={150} alt='Девушка с зубной щёткой' id='girl' priority></Image>
-          <Image src='/rounds.svg' width={200} height={100} alt='фон' id='rounds' priority></Image>
+          <Image src='/Galina_doctor.svg' width={100} height={150} alt='Девушка с зубной щёткой' id='girl' priority decoding="async"
+            data-nimg="1" fetchPriority="high"></Image>
+          <Image src='/rounds.svg' width={200} height={100} alt='фон' id='rounds' priority decoding="async"
+            data-nimg="1" fetchPriority="high"> </Image>
         </div>
         <div className="blockAdvIcons">
           <div className="advIcons">
