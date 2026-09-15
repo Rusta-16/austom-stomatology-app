@@ -9,7 +9,7 @@ export default function YandexMetrika() {
     <>
       <Script
         id="yandex-metrika"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
             (function(m,e,t,r,i,k,a){
@@ -32,12 +32,8 @@ export default function YandexMetrika() {
             })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
 
             ym(${COUNTER_ID}, 'init', {
-              webvisor: true,
-              clickmap: true,
-              ecommerce: "dataLayer",
               referrer: document.referrer,
               url: location.href,
-              accurateTrackBounce: true,
               trackLinks: true
             });
           `,

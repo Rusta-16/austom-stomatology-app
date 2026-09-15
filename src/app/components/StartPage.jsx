@@ -6,7 +6,7 @@ export default function StartPage() {
   return (
     <div className='startPage' id='start'>
       <div className='startDescription'>
-        <h2>Забота о ваших зубах - наша работа</h2>
+        <h1>Забота о ваших зубах - наша работа</h1>
         <p id='pM'>Комфортное лечение
           и забота о здоровье зубов
           в современной клинике Ростова-на-Дону</p>
