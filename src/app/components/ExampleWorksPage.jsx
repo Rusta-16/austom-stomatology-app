@@ -15,27 +15,22 @@ export default function ExampleOurWorks() {
     useEffect(() => {
         const slide = wraper.current
         if (slide) {
-            console.log('Кубик существует')
             slide.addEventListener('touchstart', StartTouchX, { passive: true })
             slide.addEventListener('touchend', EndTouchX, { passive: true })
         }
 
         function StartTouchX(e) {
             startTouch.current = e.touches[0].screenX
-            console.log('start X:', startTouch.current)
         }
         function EndTouchX(e) {
             endTouch.current = e.changedTouches[0].screenX
-            console.log('end X:', endTouch.current)
             let diff = endTouch.current - startTouch.current
             if (diff >= 20) {
-                console.log('Разница', diff)
-                console.log('Свайп вправо')
+
                 prevSlide()
             }
             else if (diff <= -20) {
-                console.log('Разница', diff)
-                console.log('Свайп влево')
+
                 nextSlide()
 
             }

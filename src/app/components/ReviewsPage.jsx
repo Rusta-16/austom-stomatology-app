@@ -8,6 +8,7 @@ export default function ReviewsPage() {
         <iframe
           src="https://yandex.ru/maps-reviews-widget/1029802694?comments"
           title="Отзывы"
+          loading="lazy"
         ></iframe>
 
         <a

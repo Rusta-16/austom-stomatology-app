@@ -12,27 +12,22 @@ export default function ClinicIntoPage() {
     useEffect(() => {
         const slide = wraper.current
         if (slide) {
-            console.log('Кубик существует')
             slide.addEventListener('touchstart', StartTouchX, { passive: true })
             slide.addEventListener('touchend', EndTouchX, { passive: true })
         }
 
         function StartTouchX(e) {
             startTouch.current = e.touches[0].screenX
-            console.log('start X:', startTouch.current)
         }
         function EndTouchX(e) {
             endTouch.current = e.changedTouches[0].screenX
-            console.log('end X:', endTouch.current)
             let diff = endTouch.current - startTouch.current
             if (diff >= 20) {
-                console.log('Разница', diff)
-                console.log('Свайп вправо')
+
                 prevSlide()
             }
             else if (diff <= -20) {
-                console.log('Разница', diff)
-                console.log('Свайп влево')
+
                 nextSlide()
 
             }
@@ -58,19 +53,19 @@ export default function ClinicIntoPage() {
 
     const arrPhotoWorks = [
         {
-            ImgRoom: 'room1.svg',
+            ImgRoom: 'room1.webp',
         },
         {
-            ImgRoom: 'room2.svg',
+            ImgRoom: 'room2.webp',
         },
         {
-            ImgRoom: 'room3.svg',
+            ImgRoom: 'room3.webp',
         },
         {
-            ImgRoom: 'room4.svg',
+            ImgRoom: 'room4.webp',
         },
         {
-            ImgRoom: 'room5.svg',
+            ImgRoom: 'room5.webp',
         },
     ]
     const slides = [

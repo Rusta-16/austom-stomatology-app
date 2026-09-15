@@ -1,7 +1,4 @@
-'use client'
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
-import { compile } from 'sass'
 
 export default function AdvantagesPage() {
 
@@ -21,12 +18,9 @@ export default function AdvantagesPage() {
         }
     ]
 
-    const AustomH2 = 'Стоматология «Аюстом» забота о ваших зубах - наша работа'
-    const [AustomH2Display, setAustomH2Display] = useState('')
-
     return (
         <div className='AdvantagesPage'>
-            <h2>{AustomH2Display}</h2>
+            <h2></h2>
             <section>
                 {
                     miniImg.map((img, id) => {

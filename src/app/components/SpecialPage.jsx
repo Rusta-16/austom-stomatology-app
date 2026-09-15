@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 import ButtonSpecial from './ui/Buttons/ButtonSpecial'
 
@@ -18,7 +17,7 @@ export default function SpecialPage() {
                 </div>
             </div>
             <div className="offer">
-                <Image src='/vrach.svg' alt='Команда стоматологов' width={100} height={100}></Image>
+                <Image src='/vrach.svg' alt='Команда стоматологов' width={200} height={200}></Image>
                 <div className="offerText">
                     <h4>Скидка на коплексную гигиену полости рта <span>10%</span></h4>
                     <p>Данное предложение актуально до 01.01.2027</p>

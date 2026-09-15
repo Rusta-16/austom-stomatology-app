@@ -21,7 +21,7 @@
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        background: url('/bgForm.svg');
+        background: url('/bgForm.webp');
         width: clamp(17.5rem, 10.652rem + 31.3vw, 40rem);
         height: clamp(17.5rem, 10.652rem + 31.3vw, 40rem);
         background-size: cover;
@@ -107,6 +107,23 @@
                 padding: .5rem;
                 display: flex;
                 font-size: clamp(0.8rem, 0.587rem + 0.97vw, 1.5rem);
+            }
+
+            .spinner {
+                width: 1.75em;
+                height: 1.75em;
+                border: 3.5px solid rgba(0, 0, 0, 0.15);
+                border-top-color: #FFC6C4;
+                border-radius: 50%; 
+                display: inline-block;
+                animation: spin 1s linear infinite;
+                vertical-align: middle;
+            }
+
+            @keyframes spin {
+                to {
+                    transform: rotate(360deg);
+                }
             }
         }
     }

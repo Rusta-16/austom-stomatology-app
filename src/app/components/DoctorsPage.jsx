@@ -11,27 +11,22 @@ export default function DoctorsPage() {
   useEffect(() => {
     const slide = wraper.current
     if (slide) {
-      console.log('Кубик существует')
       slide.addEventListener('touchstart', StartTouchX, { passive: true })
       slide.addEventListener('touchend', EndTouchX, { passive: true })
     }
 
     function StartTouchX(e) {
       startTouch.current = e.touches[0].screenX
-      console.log('start X:', startTouch.current)
     }
     function EndTouchX(e) {
       endTouch.current = e.changedTouches[0].screenX
-      console.log('end X:', endTouch.current)
       let diff = endTouch.current - startTouch.current
       if (diff >= 20) {
-        console.log('Разница', diff)
-        console.log('Свайп вправо')
+
         prevSlide()
       }
       else if (diff <= -20) {
-        console.log('Разница', diff)
-        console.log('Свайп влево')
+
         nextSlide()
 
       }
@@ -56,22 +51,22 @@ export default function DoctorsPage() {
 
   const arrPhotoWorks = [
     {
-      ImgUrl: 'Galina.svg',
+      ImgUrl: 'Galina.webp',
       fio: 'Цветкова Галина Юрьевна',
       special: 'Врач-ортопед'
     },
     {
-      ImgUrl: 'Igoshina.svg',
+      ImgUrl: 'Igoshina.webp',
       fio: 'Игошина Александра Сергеевна',
       special: 'Врач стоматолог - общей практике'
     },
     {
-      ImgUrl: 'Gabrelyn.svg',
+      ImgUrl: 'Gabrelyn.webp',
       fio: 'Габрелян Манушак Аароновна',
       special: 'Врач стоматолог - терапевт'
     },
     {
-      ImgUrl: 'Bakaderova.svg',
+      ImgUrl: 'Bakaderova.webp',
       fio: 'Быкадырова Валерия Романовна',
       special: 'Ассистент - стоматолога'
     }

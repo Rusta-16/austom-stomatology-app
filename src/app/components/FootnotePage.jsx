@@ -5,7 +5,7 @@ import React from 'react'
 export default function FootnotePage() {
     return (
         <div className='FootnotePage' id='note'>
-            <Image src='/GenDoct.svg' alt='Ген-дир' id='gen-doct-image' width={100} height={100}></Image>
+            <Image src='/GenDoct.webp' alt='Ген-дир' id='gen-doct-image' width={100} height={100}></Image>
             <div className="textWithIcon">
                 <div className="text">
                     <p id="footnote-text">У нас вы никогда не останетесь без внимания!</p>

@@ -20,7 +20,6 @@ export default function ShowForm({ children }) {
 
     }
     function showAcsess() {
-        console.log('acsess')
         setAcsess(true)
     }
     return (
