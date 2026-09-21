@@ -20,12 +20,11 @@ export default function EntryForm({ cancelConfirm, showAcsess }) {
     }
   }
 
-  function handleAcceptTel(value, maskRef) {
-    let unmasked = maskRef.unmaskedValue
-    setTel(unmasked)
-
-    // Валидацию длины 
-    if (unmasked.length < 10) {
+  function handleChangeTel(e) {
+    // Удаляем все нецифровые символы
+    const value = e.target.value.replace(/\D/g, '')
+    setTel(value)
+    if (value.length < 11) {
       setErrorTel('Неполный номер')
     } else {
       setErrorTel('')

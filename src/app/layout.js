@@ -66,7 +66,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ru">
       <body className={montserrat.className}>
-        <YandexMetrika/>
+        <YandexMetrika />
         <Header />
         <main>{children}</main>
         <Footer />
