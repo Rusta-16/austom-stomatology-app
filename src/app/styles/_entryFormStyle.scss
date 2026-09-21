@@ -68,8 +68,8 @@
                 font-size: clamp(1.2rem, 0.835rem + 1.67vw, 2.4rem);
                 margin-top: 0;
                 justify-self: flex-start;
+                padding: 2rem;
             }
-
             #comment {
                 height: clamp(7rem, 6.087rem + 4.17vw, 10rem);
 
@@ -127,4 +127,7 @@
             }
         }
     }
+}
+#report{
+    padding: 2rem;
 }

@@ -15,9 +15,8 @@ export default function StartPage() {
       </div>
       <div className="infoBlock">
         <div className='imgGirlWithToothbrush'>
-    
           <Image src='/Galina_doctor.webp' width={200} height={100} alt='Девушка с зубной щёткой' id='girl' priority fetchPriority="high"/>
-          <Image src='/rounds.svg' width={200} height={100} alt='фон' id='rounds' priority fetchPriority="high"/>
+          <Image src='/rounds.svg' fill style={{ objectFit: 'cover' }}  alt='фон' id='rounds'/>
         </div>
         <div className="blockAdvIcons">
           <div className="advIcons">
