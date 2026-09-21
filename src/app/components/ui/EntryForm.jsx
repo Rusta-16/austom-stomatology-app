@@ -69,7 +69,7 @@ export default function EntryForm({ cancelConfirm, showAcsess }) {
             placeholder="+7 (___) ___-__-__"
             required
             type="tel"
-            onAccept={handleAcceptTel}
+            onAccept={handleChangeTel}
             name="phone"
           />
           {errorTel && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '-1vh' }}>{errorTel}</p>}
