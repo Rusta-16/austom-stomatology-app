@@ -51,9 +51,6 @@
             max-width: 700px;
             font-size: clamp(1.2rem, 1.017rem + 0.83vw, 1.8rem);
         }
-
-
-        
     }
 
     .infoBlock {
@@ -68,15 +65,11 @@
             width: 100%;
             overflow: hidden;
 
-
             #rounds {
                 position: absolute;
-                width: clamp(20rem, 10.182rem + 49.09vw, 47rem);
-                height: clamp(20rem, 10.182rem + 49.09vw, 47rem);
-                right: 0;
-                transform: translateX(0%) translateY(0%);
                 filter: none;
                 z-index: -1;
+                
             }
 
             #girl {
@@ -84,8 +77,8 @@
                 padding-top: 9vw;
                 width: clamp(9rem, 5.152rem + 14.3vw, 20rem);
                 height: inherit;
-                left: 50%;
-                transform: translateX(-50%);
+                left: 7%;
+                transform: translateX(50%);
                 filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
                 will-change: filter;
                 z-index: 1;
@@ -142,10 +135,4 @@
             }
         }
     }
-
-
-
-
-
-
 }
