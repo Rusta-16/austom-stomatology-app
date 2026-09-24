@@ -2,16 +2,16 @@ export async function POST(req) {
   try {
     const { fio, tel, comment } = await req.json()
 
-    const TOKEN = process.env.TOKEN
-    const CHAT_ID = process.env.CHAT_ID
+    const MAX_TOKEN = process.env.MAX_TOKEN
+    const MAX_CHAT_ID = process.env.MAX_CHAT_ID
 
-    if (!TOKEN) {
+    if (!MAX_TOKEN) {
       throw new Error('MAX_TOKEN is missing')
     }
 
-    if (!CHAT_ID) {
+    if (!MAX_CHAT_ID) {
       throw new Error('MAX is missing')
-    }бю
+    }
 
     const message = `
 🦷 Новая заявка:
@@ -21,12 +21,12 @@ export async function POST(req) {
 💬 Комментарий: ${comment || 'нет'}
 `
     const res = await fetch(
-    `https://platform-api2.max.ru/messages?chat_id=${CHAT_ID}`,
+    `https://platform-api2.max.ru/messages?chat_id=${MAX_CHAT_ID}`,
     {
       method: 'POST',
 
       headers: {
-        'Authorization': TOKEN,
+        'Authorization': MAX_TOKEN,
         'Content-Type': 'application/json',
       },
 
@@ -37,7 +37,6 @@ export async function POST(req) {
   )
 
   const data = await res.json()
-
 
     console.log('MAX HTTP status:', res.status)
     console.log('MAX response:', data)

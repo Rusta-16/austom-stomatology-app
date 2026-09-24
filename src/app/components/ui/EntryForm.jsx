@@ -57,10 +57,10 @@ export default function EntryForm({ cancelConfirm, showAcsess }) {
       <div className="modalContent" onClick={(e) => e.stopPropagation()}>
         <button id='faTime' type="button" onClick={cancelConfirm}><FaTimes size="1.5rem" /></button>
         <form onSubmit={handleSubmit}>
-          <h2 id='report'>На сайте проводятся технические работы <br />Функция записи на приём временно не доступна <br /> приносим свои извинения и просим позвонить по номеру +79604433999</h2>
-          {/* <h2>Запись на прием</h2> */}
+          {/* <h2 id='report'>На сайте проводятся технические работы <br />Функция записи на приём временно не доступна <br /> приносим свои извинения и просим позвонить по номеру +79604433999</h2> */}
+          <h2>Запись на прием</h2>
           
-          {/* <input type="text" name="fio" id="" required placeholder='ФИО' value={fio} onChange={handleChangeFio} />
+          <input type="text" name="fio" id="" required placeholder='ФИО' value={fio} onChange={handleChangeFio} />
           {errorFio && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '-1vh' }}>{errorFio}</p>}
           <IMaskInput
             mask="+7 (000) 000-00-00"
@@ -83,7 +83,7 @@ export default function EntryForm({ cancelConfirm, showAcsess }) {
             <div className="spinner" aria-label="loading" role="status" />
           ) : (
             <button className='buttonCard' type="submit">Записаться на приём</button>
-          )} */}
+          )}
         </form>
       </div>
     </div>
