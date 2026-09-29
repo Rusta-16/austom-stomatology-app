@@ -3,6 +3,7 @@ import './styles/globals.scss';
 import Header from "./components/ui/Header";
 import Footer from "./components/ui/Footer";
 import YandexMetrika from "./components/YandexMetrika";
+import Script from "next/script";
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
