@@ -20,11 +20,10 @@ export default function EntryForm({ cancelConfirm, showAcsess }) {
     }
   }
 
-  function handleChangeTel(e) {
+  function handleChangeTel(value) {
     // Удаляем все нецифровые символы
-    const value = e.target.value.replace(/\D/g, '')
     setTel(value)
-    if (value.length < 11) {
+    if (value.length < 10) {
       setErrorTel('Неполный номер')
     } else {
       setErrorTel('')
@@ -70,7 +69,7 @@ export default function EntryForm({ cancelConfirm, showAcsess }) {
             placeholder="+7 (___) ___-__-__"
             required
             type="tel"
-            onAccept={handleChangeTel}
+            onAccept={(value) => handleChangeTel(value)}
             name="phone"
           />
           {errorTel && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '-1vh' }}>{errorTel}</p>}
