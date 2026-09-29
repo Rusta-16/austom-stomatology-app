@@ -86,17 +86,16 @@
 Рустам
 Вёрстка, адаптив, логика приложения, деплой
 
-- Telegram: [ссылка]
-- Почта: [email]
+- Telegram: @Adrenalin161
+- Почта: rustambabaev161@gmail.com
     
 **UI/UX дизайн:** 
 Альбина
 Визуальная концепция, разработка даизайн макетов и прототипов, типографика, стилизация
 
-- Telegram: [ссылка]
-- Max: [ссылка]
-- Почта: [email]
-- Figma-макет: [https://www.figma.com/design/C9h0gEtEJWGBrcazdlU3Sd/Untitled?node-id=0-1&t=NBypgINu2uZsChOJ-1)]
+- Telegram: @AlbinaTsvet
+- Почта: alina_tsvetkova_84@bk.ru
+- Figma-макет: https://www.figma.com/design/C9h0gEtEJWGBrcazdlU3Sd/Untitled?node-id=0-1&t=NBypgINu2uZsChOJ-1
 
 ---
 
