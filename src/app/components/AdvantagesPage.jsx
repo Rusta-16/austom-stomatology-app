@@ -20,7 +20,7 @@ export default function AdvantagesPage() {
 
     return (
         <div className='AdvantagesPage'>
-            <h2></h2>
+            <h2>Наши преимущества</h2>
             <section>
                 {
                     miniImg.map((img, id) => {
