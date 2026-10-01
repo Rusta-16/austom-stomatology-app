@@ -5,10 +5,12 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 export default function DoctorsPage() {
   const startTouch = useRef(0)
   const endTouch = useRef(0)
-
+  const [year,setYear] = useState(0) // переменная текущего года
   const [currentSlide, setCurrentSlide] = useState(6)
   const wraper = useRef(null)
   useEffect(() => {
+    const actualYear = new Date().getFullYear() 
+    setYear(actualYear)
     const slide = wraper.current
     if (slide) {
       slide.addEventListener('touchstart', StartTouchX, { passive: true })
@@ -31,6 +33,7 @@ export default function DoctorsPage() {
 
       }
     }
+    
     return () => {
 
       slide.removeEventListener('touchstart', StartTouchX)
@@ -39,6 +42,25 @@ export default function DoctorsPage() {
     }
 
   }, [])
+  function ExperienceCalculateYears(experience){
+    if ((11 <= experience % 100) && ( experience % 100 <= 14)){
+      experience = `${experience} лет`
+      
+    } 
+    else if (experience % 10 === 1) {
+      experience = `${experience} год`
+    }
+
+    else if ((experience % 10 >=2 ) && (experience % 10 <= 4)){
+      experience = `${experience} года`
+    }
+
+    else {
+      experience = `${experience} лет`
+    }
+      
+    return experience
+    }
 
   function prevSlide() {
     setCurrentSlide((prev) => prev - 1)
@@ -48,27 +70,32 @@ export default function DoctorsPage() {
     setCurrentSlide((prev) => prev + 1)
 
   }
+  
 
   const arrPhotoWorks = [
     {
       ImgUrl: 'Galina.webp',
       fio: 'Цветкова Галина Юрьевна',
-      special: 'Врач-ортопед'
+      special: 'Врач-ортопед',
+      experience : year - 2014
     },
     {
       ImgUrl: 'Igoshina.webp',
       fio: 'Игошина Александра Сергеевна',
-      special: 'Врач стоматолог - общей практике'
+      special: 'Врач стоматолог - общей практике',
+      experience : year - 2012
     },
     {
       ImgUrl: 'Gabrelyn.webp',
       fio: 'Габрелян Манушак Аароновна',
-      special: 'Врач стоматолог - терапевт'
+      special: 'Врач стоматолог - терапевт',
+      experience : year - 2024
     },
     {
       ImgUrl: 'Bakaderova.webp',
       fio: 'Быкадырова Валерия Романовна',
-      special: 'Ассистент - стоматолога'
+      special: 'Ассистент - стоматолога',
+      experience : year - 2024
     }
   ]
 
@@ -105,6 +132,9 @@ export default function DoctorsPage() {
                       <Image src={`/doctors/${imgUrl.ImgUrl}`} alt='s' width={400} height={200}></Image>
                       <h3>{imgUrl.fio}</h3>
                       <p>{imgUrl.special}</p>
+                      <div className="roundExp">
+                        <div className='roundWrapper'><p>{ExperienceCalculateYears(imgUrl.experience)}</p></div>
+                      </div>
                     </div>
                   )
 
