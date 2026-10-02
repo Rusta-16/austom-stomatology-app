@@ -2,7 +2,6 @@ import { Montserrat } from "next/font/google";
 import './styles/globals.scss';
 import Header from "./components/ui/Header";
 import Footer from "./components/ui/Footer";
-import YandexMetrika from "./components/YandexMetrika";
 import Script from "next/script";
 
 const montserrat = Montserrat({ subsets: ['latin'] });
@@ -67,7 +66,28 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ru">
       <body className={montserrat.className}>
-        <YandexMetrika />
+        <Script id="yandex-metrika" strategy="afterInteractive">
+          {`
+            (function(m,e,t,r,i,k,a){
+                m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                m[i].l=1*new Date();
+                for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+            })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+            ym(91536508, 'init', {
+                webvisor: true,
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true
+            });
+          `}
+        </Script>
+        <noscript>
+          <div>
+            <img src="https://mc.yandex.ru/watch/91536508" style={{ position: 'absolute', left: '-9999px' }} alt="" />
+          </div>
+        </noscript>
         <Header />
         <main>{children}</main>
         <Footer />
