@@ -24,10 +24,11 @@
         background: url('/bgForm.webp');
         width: clamp(17.5rem, 10.652rem + 31.3vw, 40rem);
         height: clamp(17.5rem, 10.652rem + 31.3vw, 40rem);
-        background-size: cover;
+        min-height: 355px;
         padding: 1rem 0;
         overflow: hidden;
-        border-radius: 1.5rem;
+        border-radius: 2rem;
+        box-sizing: border-box;
 
         #faTime {
             position: absolute;
@@ -42,10 +43,10 @@
         &::before {
             content: "";
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 99%;
-            height: 99%;
+            // inset: 0;
+            width: 100%;
+            height: 100%;
+            left: .5%;
             background: #ffff;
             z-index: -1;
             border-radius: 2rem;
